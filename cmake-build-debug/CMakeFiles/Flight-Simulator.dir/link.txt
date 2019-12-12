@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Flight-Simulator.dir/main.cpp.o  -o Flight-Simulator 

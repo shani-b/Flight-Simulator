@@ -1,0 +1,3 @@
+/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir
+/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/edit_cache.dir
