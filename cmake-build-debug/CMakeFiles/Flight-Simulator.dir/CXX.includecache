@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/ofeks/CLionProjects/Flight-Simulator/main.cpp
-cstdio
+/home/shani/CLionProjects/Flight-Simulator/main.cpp
+string
+-
+list
+-
+fstream
+-
+iostream
 -
 

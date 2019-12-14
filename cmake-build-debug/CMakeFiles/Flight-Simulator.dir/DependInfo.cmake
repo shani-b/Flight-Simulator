@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ofeks/CLionProjects/Flight-Simulator/main.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/main.cpp.o"
+  "/home/shani/CLionProjects/Flight-Simulator/main.cpp" "/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
