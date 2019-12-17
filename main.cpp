@@ -2,9 +2,25 @@
 // Created by shani on 12/12/2019.
 //
 
-#include <cstdio>
+#include <string>
+#include <iostream>
+#include <vector>
+#include "Singelton.h"
+#include "Ex3.h"
 
-int main() {
-    printf("hello");
+using namespace std;
+Singleton *Singleton::instance = NULL;
+
+vector<string> lexer(const char *fileName);
+
+int main(int argc, char* argv[]) {
+    printf("hello\n");
+
+    Lexer lexer1;
+    vector<string> tokens = lexer1.lexer("fly.txt");
+
+
+
+
     return 0;
 }

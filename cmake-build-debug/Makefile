@@ -48,10 +48,10 @@ RM = /snap/clion/98/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ofeks/CLionProjects/Flight-Simulator
+CMAKE_SOURCE_DIR = /home/shani/CLionProjects/Flight-Simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,411 @@ Flight-Simulator/fast:
 	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/build
 .PHONY : Flight-Simulator/fast
 
+BinaryOperator.o: BinaryOperator.cpp.o
+
+.PHONY : BinaryOperator.o
+
+# target to build an object file
+BinaryOperator.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o
+.PHONY : BinaryOperator.cpp.o
+
+BinaryOperator.i: BinaryOperator.cpp.i
+
+.PHONY : BinaryOperator.i
+
+# target to preprocess a source file
+BinaryOperator.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.i
+.PHONY : BinaryOperator.cpp.i
+
+BinaryOperator.s: BinaryOperator.cpp.s
+
+.PHONY : BinaryOperator.s
+
+# target to generate assembly for a file
+BinaryOperator.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.s
+.PHONY : BinaryOperator.cpp.s
+
+Command.o: Command.cpp.o
+
+.PHONY : Command.o
+
+# target to build an object file
+Command.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Command.cpp.o
+.PHONY : Command.cpp.o
+
+Command.i: Command.cpp.i
+
+.PHONY : Command.i
+
+# target to preprocess a source file
+Command.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Command.cpp.i
+.PHONY : Command.cpp.i
+
+Command.s: Command.cpp.s
+
+.PHONY : Command.s
+
+# target to generate assembly for a file
+Command.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Command.cpp.s
+.PHONY : Command.cpp.s
+
+Div.o: Div.cpp.o
+
+.PHONY : Div.o
+
+# target to build an object file
+Div.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Div.cpp.o
+.PHONY : Div.cpp.o
+
+Div.i: Div.cpp.i
+
+.PHONY : Div.i
+
+# target to preprocess a source file
+Div.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Div.cpp.i
+.PHONY : Div.cpp.i
+
+Div.s: Div.cpp.s
+
+.PHONY : Div.s
+
+# target to generate assembly for a file
+Div.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Div.cpp.s
+.PHONY : Div.cpp.s
+
+Interpreter.o: Interpreter.cpp.o
+
+.PHONY : Interpreter.o
+
+# target to build an object file
+Interpreter.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o
+.PHONY : Interpreter.cpp.o
+
+Interpreter.i: Interpreter.cpp.i
+
+.PHONY : Interpreter.i
+
+# target to preprocess a source file
+Interpreter.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.i
+.PHONY : Interpreter.cpp.i
+
+Interpreter.s: Interpreter.cpp.s
+
+.PHONY : Interpreter.s
+
+# target to generate assembly for a file
+Interpreter.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.s
+.PHONY : Interpreter.cpp.s
+
+Lexer.o: Lexer.cpp.o
+
+.PHONY : Lexer.o
+
+# target to build an object file
+Lexer.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o
+.PHONY : Lexer.cpp.o
+
+Lexer.i: Lexer.cpp.i
+
+.PHONY : Lexer.i
+
+# target to preprocess a source file
+Lexer.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Lexer.cpp.i
+.PHONY : Lexer.cpp.i
+
+Lexer.s: Lexer.cpp.s
+
+.PHONY : Lexer.s
+
+# target to generate assembly for a file
+Lexer.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Lexer.cpp.s
+.PHONY : Lexer.cpp.s
+
+Minus.o: Minus.cpp.o
+
+.PHONY : Minus.o
+
+# target to build an object file
+Minus.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Minus.cpp.o
+.PHONY : Minus.cpp.o
+
+Minus.i: Minus.cpp.i
+
+.PHONY : Minus.i
+
+# target to preprocess a source file
+Minus.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Minus.cpp.i
+.PHONY : Minus.cpp.i
+
+Minus.s: Minus.cpp.s
+
+.PHONY : Minus.s
+
+# target to generate assembly for a file
+Minus.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Minus.cpp.s
+.PHONY : Minus.cpp.s
+
+Mul.o: Mul.cpp.o
+
+.PHONY : Mul.o
+
+# target to build an object file
+Mul.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Mul.cpp.o
+.PHONY : Mul.cpp.o
+
+Mul.i: Mul.cpp.i
+
+.PHONY : Mul.i
+
+# target to preprocess a source file
+Mul.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Mul.cpp.i
+.PHONY : Mul.cpp.i
+
+Mul.s: Mul.cpp.s
+
+.PHONY : Mul.s
+
+# target to generate assembly for a file
+Mul.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Mul.cpp.s
+.PHONY : Mul.cpp.s
+
+Parser.o: Parser.cpp.o
+
+.PHONY : Parser.o
+
+# target to build an object file
+Parser.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Parser.cpp.o
+.PHONY : Parser.cpp.o
+
+Parser.i: Parser.cpp.i
+
+.PHONY : Parser.i
+
+# target to preprocess a source file
+Parser.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Parser.cpp.i
+.PHONY : Parser.cpp.i
+
+Parser.s: Parser.cpp.s
+
+.PHONY : Parser.s
+
+# target to generate assembly for a file
+Parser.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Parser.cpp.s
+.PHONY : Parser.cpp.s
+
+Plus.o: Plus.cpp.o
+
+.PHONY : Plus.o
+
+# target to build an object file
+Plus.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Plus.cpp.o
+.PHONY : Plus.cpp.o
+
+Plus.i: Plus.cpp.i
+
+.PHONY : Plus.i
+
+# target to preprocess a source file
+Plus.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Plus.cpp.i
+.PHONY : Plus.cpp.i
+
+Plus.s: Plus.cpp.s
+
+.PHONY : Plus.s
+
+# target to generate assembly for a file
+Plus.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Plus.cpp.s
+.PHONY : Plus.cpp.s
+
+Token.o: Token.cpp.o
+
+.PHONY : Token.o
+
+# target to build an object file
+Token.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Token.cpp.o
+.PHONY : Token.cpp.o
+
+Token.i: Token.cpp.i
+
+.PHONY : Token.i
+
+# target to preprocess a source file
+Token.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Token.cpp.i
+.PHONY : Token.cpp.i
+
+Token.s: Token.cpp.s
+
+.PHONY : Token.s
+
+# target to generate assembly for a file
+Token.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Token.cpp.s
+.PHONY : Token.cpp.s
+
+UMinus.o: UMinus.cpp.o
+
+.PHONY : UMinus.o
+
+# target to build an object file
+UMinus.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UMinus.cpp.o
+.PHONY : UMinus.cpp.o
+
+UMinus.i: UMinus.cpp.i
+
+.PHONY : UMinus.i
+
+# target to preprocess a source file
+UMinus.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UMinus.cpp.i
+.PHONY : UMinus.cpp.i
+
+UMinus.s: UMinus.cpp.s
+
+.PHONY : UMinus.s
+
+# target to generate assembly for a file
+UMinus.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UMinus.cpp.s
+.PHONY : UMinus.cpp.s
+
+UPlus.o: UPlus.cpp.o
+
+.PHONY : UPlus.o
+
+# target to build an object file
+UPlus.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UPlus.cpp.o
+.PHONY : UPlus.cpp.o
+
+UPlus.i: UPlus.cpp.i
+
+.PHONY : UPlus.i
+
+# target to preprocess a source file
+UPlus.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UPlus.cpp.i
+.PHONY : UPlus.cpp.i
+
+UPlus.s: UPlus.cpp.s
+
+.PHONY : UPlus.s
+
+# target to generate assembly for a file
+UPlus.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UPlus.cpp.s
+.PHONY : UPlus.cpp.s
+
+UnaryOperator.o: UnaryOperator.cpp.o
+
+.PHONY : UnaryOperator.o
+
+# target to build an object file
+UnaryOperator.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UnaryOperator.cpp.o
+.PHONY : UnaryOperator.cpp.o
+
+UnaryOperator.i: UnaryOperator.cpp.i
+
+.PHONY : UnaryOperator.i
+
+# target to preprocess a source file
+UnaryOperator.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UnaryOperator.cpp.i
+.PHONY : UnaryOperator.cpp.i
+
+UnaryOperator.s: UnaryOperator.cpp.s
+
+.PHONY : UnaryOperator.s
+
+# target to generate assembly for a file
+UnaryOperator.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/UnaryOperator.cpp.s
+.PHONY : UnaryOperator.cpp.s
+
+Value.o: Value.cpp.o
+
+.PHONY : Value.o
+
+# target to build an object file
+Value.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Value.cpp.o
+.PHONY : Value.cpp.o
+
+Value.i: Value.cpp.i
+
+.PHONY : Value.i
+
+# target to preprocess a source file
+Value.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Value.cpp.i
+.PHONY : Value.cpp.i
+
+Value.s: Value.cpp.s
+
+.PHONY : Value.s
+
+# target to generate assembly for a file
+Value.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Value.cpp.s
+.PHONY : Value.cpp.s
+
+Variable.o: Variable.cpp.o
+
+.PHONY : Variable.o
+
+# target to build an object file
+Variable.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Variable.cpp.o
+.PHONY : Variable.cpp.o
+
+Variable.i: Variable.cpp.i
+
+.PHONY : Variable.i
+
+# target to preprocess a source file
+Variable.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Variable.cpp.i
+.PHONY : Variable.cpp.i
+
+Variable.s: Variable.cpp.s
+
+.PHONY : Variable.s
+
+# target to generate assembly for a file
+Variable.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Variable.cpp.s
+.PHONY : Variable.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +564,51 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Flight-Simulator"
 	@echo "... edit_cache"
+	@echo "... BinaryOperator.o"
+	@echo "... BinaryOperator.i"
+	@echo "... BinaryOperator.s"
+	@echo "... Command.o"
+	@echo "... Command.i"
+	@echo "... Command.s"
+	@echo "... Div.o"
+	@echo "... Div.i"
+	@echo "... Div.s"
+	@echo "... Interpreter.o"
+	@echo "... Interpreter.i"
+	@echo "... Interpreter.s"
+	@echo "... Lexer.o"
+	@echo "... Lexer.i"
+	@echo "... Lexer.s"
+	@echo "... Minus.o"
+	@echo "... Minus.i"
+	@echo "... Minus.s"
+	@echo "... Mul.o"
+	@echo "... Mul.i"
+	@echo "... Mul.s"
+	@echo "... Parser.o"
+	@echo "... Parser.i"
+	@echo "... Parser.s"
+	@echo "... Plus.o"
+	@echo "... Plus.i"
+	@echo "... Plus.s"
+	@echo "... Token.o"
+	@echo "... Token.i"
+	@echo "... Token.s"
+	@echo "... UMinus.o"
+	@echo "... UMinus.i"
+	@echo "... UMinus.s"
+	@echo "... UPlus.o"
+	@echo "... UPlus.i"
+	@echo "... UPlus.s"
+	@echo "... UnaryOperator.o"
+	@echo "... UnaryOperator.i"
+	@echo "... UnaryOperator.s"
+	@echo "... Value.o"
+	@echo "... Value.i"
+	@echo "... Value.s"
+	@echo "... Variable.o"
+	@echo "... Variable.i"
+	@echo "... Variable.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
