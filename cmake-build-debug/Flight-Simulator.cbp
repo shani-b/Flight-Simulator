@@ -84,6 +84,72 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/BinaryOperator.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Command.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Command.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Div.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex3.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Expression.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Interpreter.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Lexer.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Lexer.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Minus.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Mul.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Parser.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Parser.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Plus.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Token.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Token.h">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/UMinus.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/UPlus.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/UnaryOperator.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Value.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Variable.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/main.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
