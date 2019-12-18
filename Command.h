@@ -7,32 +7,25 @@
 
 #include "Singelton.h"
 #include <vector>
+#include <iostream>
+
 
 class Command {
+protected:
+    //all maps of var
+    Singleton *s = s->getInstance();
 public:
     virtual int execute(vector<string> tokens,int index) = 0;
 };
 
 class DefineVar: public Command {
 public:
-    int execute(vector<string> tokens,int index) {
-        Singleton *s = s->getInstance();
-
-        Variable *var = new Variable();
-        var->setName(tokens[index+1]);
-
-        //syntax: var name <-> sim
-        if (tokens[index+1] == "->"){
-            var->setSim(tokens[index +3]);
-            s->getProg().insert(pair<string,Variable*>(tokens[index+1], var));
-        } else if (tokens[index+1] == "<-"){
-            var->setSim(tokens[index +3]);
-            s->getSim().insert(pair<string,Variable*>(tokens[index+1], var));
-        } else if (tokens[index+1] == "="){
-            //TODO call set command
-        }
-    }
+    int execute(vector<string> tokens,int index);
 };
 
+class SetVar: public Command {
+public:
+    int execute(vector<string> tokens,int index);
+};
 
 #endif //FLIGHT_SIMULATOR_COMMAND_H

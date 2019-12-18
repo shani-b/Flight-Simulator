@@ -18,8 +18,10 @@ int main(int argc, char* argv[]) {
 
     Lexer lexer1;
     vector<string> tokens = lexer1.lexer("fly.txt");
+    Parser parser1;
+    parser1.parse(tokens);
 
-
+    Singleton *s = s->getInstance();
 
 
     return 0;

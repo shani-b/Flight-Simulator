@@ -4,6 +4,7 @@
 
 #include "Ex1.h"
 #include "Token.h"
+#include "Singelton.h"
 #include <deque>
 #include <stack>
 #include <iostream>
@@ -16,63 +17,15 @@ bool isStrNum(string str);
 deque<Token> strToArray(string str);
 Expression* arrayToExpression(deque<Token> *tokens);
 
+Interpreter::Interpreter() {
+    Singleton *s = s->getInstance();
+    m_listOfVar = s->getProg();
+}
 
 Interpreter::~Interpreter() {
     m_listOfVar.clear();
 }
 
-void Interpreter::setVariables(string str) {
-    string var;
-    string var2;
-    string value;
-    bool passToValue = false;
-
-    for (unsigned int i = 0; i < str.size();) {
-
-        if (str[i] == '=') {
-            passToValue = true;
-            i++;
-        }
-        if (passToValue) {
-            value += str[i];
-            i++;
-        } else {
-            var += str[i];
-            i++;
-        }
-        if (str[i] == ';') {
-            passToValue = false;
-
-            if (!isStrNum(value)) {
-                throw "bad input";
-            }
-            //adding variable
-            if (!m_listOfVar.count(var)) {
-                m_listOfVar.insert( pair<string, Variable *> (var, (new Variable(var, stod(value)))));
-            } else {
-                m_listOfVar.at(var) = new Variable(var, stod(value));
-
-            }
-            value = "";
-            var = "";
-            i++;
-        }
-    }
-    //if string didn't end with ";"
-    if (value.size() != 0 && var.size() != 0)
-    {
-        if (!isStrNum(value)) {
-            throw "bad input";
-        }
-
-        if (!m_listOfVar.count(var)) {
-            m_listOfVar.insert(pair<string,Variable*>(var, (new Variable(var, stod(value)))));
-        } else {
-            m_listOfVar.at(var) = new Variable(var, stod(value));
-        }
-    }
-
-}
 
 bool Interpreter::isVarInList(string symbol) {
     if (m_listOfVar.count(symbol)) {
@@ -140,6 +93,10 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
     Expression *b(nullptr);
     stack<Expression*> mtFinalExp;
     bool flag = false;
+
+    if (output.front().getType() == Number && (output.size()==1)) {
+        flag = true;
+    }
 
     while (output.size() != 0) {
         if (output.front().getType() == Number) {

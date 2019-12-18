@@ -31,13 +31,13 @@ public:
         return this -> simVars;
     }
 
-    /*void setProg(unordered_map<string ,Variable> data) {
-        this -> progVars = data;
+    void addVarProg(Variable *var) {
+        this -> progVars[var->getVar()] = var;
     }
 
-    void setSim(unordered_map<string,Variable> data) {
-        this -> simVars = data;
-    }*/
+    void addVarSim(Variable *var) {
+        this -> simVars[var->getVar()] = var;
+    }
 };
 
 #endif //FLIGHT_SIMULATOR_SINGELTON_H

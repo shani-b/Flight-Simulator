@@ -7,6 +7,11 @@ CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o: ../Expression.h
 CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o: ../Token.h
 
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Command.cpp
+CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Command.h
+CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Ex1.h
+CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Expression.h
+CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Singelton.h
+CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Token.h
 
 CMakeFiles/Flight-Simulator.dir/Div.cpp.o: ../Div.cpp
 CMakeFiles/Flight-Simulator.dir/Div.cpp.o: ../Ex1.h
@@ -16,6 +21,7 @@ CMakeFiles/Flight-Simulator.dir/Div.cpp.o: ../Token.h
 CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o: ../Ex1.h
 CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o: ../Expression.h
 CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o: ../Interpreter.cpp
+CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o: ../Singelton.h
 CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o: ../Token.h
 
 CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o: ../Command.h

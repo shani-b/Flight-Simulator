@@ -11,7 +11,7 @@ vector <string> Lexer::lexer(const char *fileName) {
     vector<string> tokens;
     string line, str;
     bool inStr = false;
-
+    bool inExpression = false;
 
     if (!file) {
         printf("Error! opening file");
@@ -24,12 +24,14 @@ vector <string> Lexer::lexer(const char *fileName) {
         for (int i = 0; i < line.length(); i++) {
 
             if (line[i] == '=') {
-                if (str.empty()){
+                if (!str.empty()){
                     tokens.push_back(str);
                 }
                 tokens.push_back("=");
                 str = "";
+                inExpression = true;
                 i++;
+
             }
             if (line[i] == '\"'){
                 inStr = !inStr;
@@ -37,14 +39,14 @@ vector <string> Lexer::lexer(const char *fileName) {
             if (line[i] == '\t') {
                 i++;
             }
-            if ((line[i] == '(') || (line[i] == ')') || (line[i] == ',')) {
+            if (!inExpression && ((line[i] == '(') || (line[i] == ')') || (line[i] == ','))) {
                 tokens.push_back(str);
                 str = "";
-            } else if (line[i] == ' ') {
+            } else if (!inExpression && (line[i] == ' ')) {
                 if (inStr){
                     str += line[i];
                 } else {
-                    if (str.empty()) {
+                    if (!str.empty()) {
                         tokens.push_back(str);
                     }
                     str = "";
@@ -60,6 +62,7 @@ vector <string> Lexer::lexer(const char *fileName) {
         if (!str.empty()){
             tokens.push_back(str);
             str ="";
+            inExpression = false;
         }
     }
     return tokens;

@@ -24,7 +24,8 @@ class Parser {
     unordered_map <string,Command*> m_commands;
 public:
     Parser() {
-        m_commands["Var"] = new DefineVar;
+        m_commands["var"] = new DefineVar;
+        m_commands["default"] = new SetVar;
     }
     void parse(vector<string> tokens);
 };

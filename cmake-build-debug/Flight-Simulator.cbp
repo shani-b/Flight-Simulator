@@ -111,9 +111,6 @@
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Lexer.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Lexer.h">
-			<Option target="Flight-Simulator"/>
-		</Unit>
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Minus.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
@@ -121,9 +118,6 @@
 			<Option target="Flight-Simulator"/>
 		</Unit>
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Parser.cpp">
-			<Option target="Flight-Simulator"/>
-		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Parser.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Plus.cpp">
