@@ -3,8 +3,8 @@
 //
 
 #include "Ex1.h"
-#include "Token.h"
-#include "Singelton.h"
+#include "../Token.h"
+#include "../Singelton.h"
 #include <deque>
 #include <stack>
 #include <iostream>

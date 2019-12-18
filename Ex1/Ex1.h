@@ -6,7 +6,7 @@
 #define UNTITLED_EX1_H
 
 #include "Expression.h"
-#include "Token.h"
+#include "../Token.h"
 #include <map>
 #include <unordered_map>
 #include <deque>

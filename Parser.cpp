@@ -2,8 +2,9 @@
 // Created by shani on 17/12/2019.
 //
 
-#include "Ex3.h"
 #include "Command.h"
+#include "Parser.h"
+#include "Lexer.h"
 
 void Parser::parse(vector<string> tokens){
 

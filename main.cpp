@@ -3,10 +3,10 @@
 //
 
 #include <string>
-#include <iostream>
 #include <vector>
 #include "Singelton.h"
-#include "Ex3.h"
+#include "Lexer.h"
+#include "Parser.h"
 
 using namespace std;
 Singleton *Singleton::instance = NULL;
