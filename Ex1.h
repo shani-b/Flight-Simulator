@@ -8,6 +8,7 @@
 #include "Expression.h"
 #include "Token.h"
 #include <map>
+#include <unordered_map>
 #include <deque>
 #include <string>
 
@@ -103,12 +104,12 @@ public:
 };
 
 class Interpreter {
-    map<string, Variable*> m_listOfVar;
+    //map<string, Variable*> m_listOfVar;
+    unordered_map<string, Variable*> m_listOfVar;
 public:
-    Interpreter() {}
+    Interpreter();
     virtual ~Interpreter();
     Expression* interpret(string str);
-    void setVariables(string str);
     bool isVarInList(string symbol);
 
     Expression* arrayToExpression(deque<Token> *tokens);

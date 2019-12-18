@@ -6,8 +6,18 @@
 #include "Command.h"
 
 void Parser::parse(vector<string> tokens){
+
+    Singleton *s = s->getInstance();
+
     for (int i = 0; i< tokens.size(); i++) {
-        Command *c = m_commands[tokens[i]];
+        auto token = tokens[i];
+        auto it = m_commands.find(tokens[i]);
+        if (it == m_commands.end()){
+            it = m_commands.find("default");
+        }
+        Command *c = it->second;
+
+
 
         if (c != nullptr) {
             i += (c->execute(tokens, i));
