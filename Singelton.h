@@ -7,14 +7,16 @@
 
 #include "Ex1/Ex1.h"
 #include <unordered_map>
+#include <thread>
 
 class Singleton {
     static Singleton *instance;
     unordered_map<string,Variable*> progVars;
     unordered_map<string,Variable*> simVars;
+    bool server_flag = true;
 
     // Private constructor so that no objects can be created.
-    Singleton() {}
+    Singleton() = default;
 
 public:
     static Singleton *getInstance() {
@@ -38,6 +40,20 @@ public:
     void addVarSim(Variable *var) {
         this -> simVars[var->getVar()] = var;
     }
+
+    bool serverStatus() {
+        return server_flag;
+    }
+
+    void serverShutdown() {
+        this -> server_flag = false;
+    }
+    /*
+    thread serverThread;
+    void createServer(int socket, ServerCommand sc) {
+        serverThread = thread([sc, socket] {ServerCommand::readData(socket);});
+    }
+     */
 };
 
 #endif //FLIGHT_SIMULATOR_SINGELTON_H

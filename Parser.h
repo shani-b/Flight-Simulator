@@ -16,6 +16,7 @@ public:
     Parser() {
         m_commands["var"] = new DefineVar;
         m_commands["default"] = new SetVar;
+        m_commands["openDataServer"] = new ServerCommand;
     }
     void parse(vector<string> tokens);
 };

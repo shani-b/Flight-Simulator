@@ -12,7 +12,6 @@
 
 class Command {
 protected:
-    //all maps of var
     Singleton *s = s->getInstance();
 public:
     virtual int execute(vector<string> tokens,int index) = 0;
@@ -26,6 +25,12 @@ public:
 class SetVar: public Command {
 public:
     int execute(vector<string> tokens,int index);
+};
+
+class ServerCommand: public Command {
+public:
+    void readData(int socket);
+    int execute(vector<string> tokens,int index) override;
 };
 
 #endif //FLIGHT_SIMULATOR_COMMAND_H

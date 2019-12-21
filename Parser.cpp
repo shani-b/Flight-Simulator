@@ -18,8 +18,6 @@ void Parser::parse(vector<string> tokens){
         }
         Command *c = it->second;
 
-
-
         if (c != nullptr) {
             i += (c->execute(tokens, i));
         }
