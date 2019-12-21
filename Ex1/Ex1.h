@@ -94,7 +94,9 @@ public:
     double calculate();
     double getValue();
     string getName();
+    string getSim();
 
+    bool isToSim() const;
 };
 
 class Value: public Expression {

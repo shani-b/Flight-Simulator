@@ -10,11 +10,11 @@
 
 int DefineVar::execute(vector<string> tokens, int index) {
     //define new var
+    int diff = 0;
     auto *var = new Variable();
     var->setName(tokens[index+1]);
 
     //syntax: var name <-> sim "path"
-    //add to the map of program
     if (tokens[index+2] == "->"){
         var->setToSim();
         var->setSim(tokens[index +4]);
@@ -23,7 +23,9 @@ int DefineVar::execute(vector<string> tokens, int index) {
     if (tokens[index+2] == "<-"){
         var->setSim(tokens[index +4]);
         s->addVarProg(var);
-    } else if (tokens[index+2] == "="){
+        s->addVarSim(var);
+    } else if (tokens[index+2] == "="){;
+        diff = 1; // to makeup for the 1 less token used
         s->addVarProg(var);
         auto existingVar = s->getProg().find(tokens[index+3]);
         if (existingVar == s->getProg().end()) {
@@ -31,15 +33,8 @@ int DefineVar::execute(vector<string> tokens, int index) {
         }
         var->setValue(existingVar->second->getValue());
         s->addVarProg(var);
-        /*
-        Command *c = new SetVar();
-        c->execute(tokens, index + 1);
-         *///TODO do we need that anymore?
     }
-
-    //TODO set new command for each var: same ^^
-    //m_command[index+1] = new SetVar;
-    return 4;
+    return 4 - diff;
 }
 
 int SetVar::execute(vector<string> tokens, int index) {
@@ -62,7 +57,6 @@ int SetVar::execute(vector<string> tokens, int index) {
 int ServerCommand::execute(vector<string> tokens, int index) {
     index++;
     int port = stoi(tokens[index]);
-
     //create socket
     int socketfd = socket(AF_INET, SOCK_STREAM, 0);
     if (socketfd == -1) {
@@ -135,9 +129,130 @@ void ServerCommand::readData(int socket) {
 
 void ServerCommand::updateData(vector<double> vars) {
     int i;
+    Singleton *s = Singleton::getInstance();
+    unordered_map<string, Variable*> map = s->getSim();
+    auto iter = map.end();
     for (i = 0; i < vars.size(); i++) {
         switch (i) {
+            case 0:
+                iter = map.find("instrumentation/airspeed-indicator/indicated-speed-kt");
+                break;
             case 1:
+                iter = map.find("sim/time/warp");
+                break;
+            case 2:
+                iter = map.find("controls/switches/magnetos");
+                break;
+            case 3:
+                iter = map.find("instrumentation/heading-indicator/offset-deg");
+                break;
+            case 4:
+                iter = map.find("instrumentation/altimeter/indicated-altitude-ft");
+                break;
+            case 5:
+                iter = map.find("instrumentation/altimeter/pressure-alt-ft");
+                break;
+            case 6:
+                iter = map.find("instrumentation/attitude-indicator/indicated-pitch-deg");
+                break;
+            case 7:
+                iter = map.find("instrumentation/attitude-indicator/indicated-roll-deg");
+                break;
+            case 8:
+                iter = map.find("instrumentation/attitude-indicator/internal-pitch-deg");
+                break;
+            case 9:
+                iter = map.find("instrumentation/attitude-indicator/internal-roll-deg");
+                break;
+            case 10:
+                iter = map.find("instrumentation/encoder/indicated-altitude-ft");
+                break;
+            case 11:
+                iter = map.find("instrumentation/encoder/pressure-alt-ft");
+                break;
+            case 12:
+                iter = map.find("instrumentation/gps/indicated-altitude-ft");
+                break;
+            case 13:
+                iter = map.find("instrumentation/gps/indicated-ground-speed-kt");
+                break;
+            case 14:
+                iter = map.find("instrumentation/gps/indicated-vertical-speed");
+                break;
+            case 15:
+                iter = map.find("instrumentation/heading-indicator/indicated-heading-deg");
+                break;
+            case 16:
+                iter = map.find("instrumentation/magnetic-compass/indicated-heading-deg");
+                break;
+            case 17:
+                iter = map.find("instrumentation/slip-skid-ball/indicated-slip-skid");
+                break;
+            case 18:
+                iter = map.find("instrumentation/turn-indicator/indicated-turn-rate");
+                break;
+            case 19:
+                iter = map.find("instrumentation/vertical-speed-indicator/indicated-speed-fpm");
+                break;
+            case 20:
+                iter = map.find("controls/flight/aileron");
+                break;
+            case 21:
+                iter = map.find("controls/flight/elevator");
+                break;
+            case 22:
+                iter = map.find("controls/flight/rudder");
+                break;
+            case 23:
+                iter = map.find("controls/flight/flaps");
+                break;
+            case 24:
+                iter = map.find("controls/engines/engine/throttle");
+                break;
+            case 25:
+                iter = map.find("controls/engines/current-engine/throttle");
+                break;
+            case 26:
+                iter = map.find("controls/switches/master-avionics");
+                break;
+            case 27:
+                iter = map.find("controls/switches/starter");
+                break;
+            case 28:
+                iter = map.find("engines/active-engine/auto-start");
+                break;
+            case 29:
+                iter = map.find("controls/flight/speedbrake");
+                break;
+            case 30:
+                iter = map.find("sim/model/c172p/brake-parking");
+                break;
+            case 31:
+                iter = map.find("controls/engines/engine/primer");
+                break;
+            case 32:
+                iter = map.find("controls/engines/current-engine/mixture");
+                break;
+            case 33:
+                iter = map.find("controls/switches/master-bat");
+                break;
+            case 34:
+                iter = map.find("controls/switches/master-alt");
+                break;
+            case 35:
+                iter = map.find("engines/engine/rpm");
+                break;
+            default:
+                cout << "didnt find var in simVar - updateData  i = " << i << endl;
+                continue;
+        }
+        if (iter == map.end()) {
+            continue;
+        } else {
+            if (!iter->second->isToSim())
+            iter->second->setValue(vars[i]);
+            cout << iter->second->getName() << " = " << iter->second->getValue() << endl;
         }
     }
 }
+

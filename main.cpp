@@ -22,8 +22,10 @@ int main(int argc, char* argv[]) {
     } catch (char const* e) {
         cout << e << endl;
     }
+    Singleton *si = Singleton::getInstance();
     string s;
     cin >> s;
-    //TODO close all sockets via flags in singelon
+    //TODO close all sockets via two-way flags in singelon
+    // (one flag turn off here to signal the loop on each thread to stop iterating, one from the thread to signal that the socket closed.
     return 0;
 }

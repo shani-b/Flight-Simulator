@@ -49,7 +49,11 @@ void Variable::setValue(double value) {
     m_value = value;
 }
 void Variable::setSim(string sim) {
-    m_sim = sim;
+    m_sim = sim.substr(2, sim.size() - 3); // to delete the '/' in the beginning
+}
+
+void Variable::setToSim() {
+    toSim = true;
 }
 Variable& Variable::operator ++() {
     ++m_value;
@@ -93,4 +97,11 @@ double Variable::getValue() {
 }
 string Variable::getName() {
     return m_name;
+}
+string Variable::getSim() {
+    return m_sim;
+}
+
+bool Variable::isToSim() const {
+    return toSim;
 }

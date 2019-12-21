@@ -38,7 +38,7 @@ public:
     }
 
     void addVarSim(Variable *var) {
-        this -> simVars[var->getName()] = var;
+        this -> simVars[var->getSim()] = var;
     }
 
     bool serverStatus() {
@@ -48,12 +48,6 @@ public:
     void serverShutdown() {
         this -> server_flag = false;
     }
-    /*
-    thread serverThread;
-    void createServer(int socket, ServerCommand sc) {
-        serverThread = thread([sc, socket] {ServerCommand::readData(socket);});
-    }
-     */
 };
 
 #endif //FLIGHT_SIMULATOR_SINGELTON_H
