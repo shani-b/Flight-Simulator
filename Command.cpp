@@ -107,8 +107,7 @@ void ServerCommand::readData(int socket) {
     char buffer[1] = {0};
     char curVar[100] = {0};
     vector<double> variables;
-
-    while (s->serverStatus()) {
+    while (s->getServerStatus()) {
         read(socket, buffer, 1);
         for (i = 0; buffer[0] != ','; i++) {
             if (buffer[0] == '\n') {
@@ -125,6 +124,8 @@ void ServerCommand::readData(int socket) {
             variables.clear();
         }
     }
+    close(socket);
+    s->socketClosed(); //telling main that the server is ready to be close
 }
 
 void ServerCommand::updateData(vector<double> vars) {

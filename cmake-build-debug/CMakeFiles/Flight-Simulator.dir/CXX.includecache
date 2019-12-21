@@ -13,6 +13,10 @@ unistd.h
 -
 Command.h
 /home/ofeks/CLionProjects/Flight-Simulator/Command.h
+vector
+-
+algorithm
+-
 
 /home/ofeks/CLionProjects/Flight-Simulator/Command.h
 Singelton.h

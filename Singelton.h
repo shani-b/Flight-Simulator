@@ -14,6 +14,7 @@ class Singleton {
     unordered_map<string,Variable*> progVars;
     unordered_map<string,Variable*> simVars;
     bool server_flag = true;
+    bool server_socket_closed = false;
 
     // Private constructor so that no objects can be created.
     Singleton() = default;
@@ -41,8 +42,16 @@ public:
         this -> simVars[var->getSim()] = var;
     }
 
-    bool serverStatus() {
+    bool getServerStatus() {
         return server_flag;
+    }
+
+    bool getServerIsDown() {
+        return this->server_socket_closed;
+    }
+
+    void socketClosed() {
+        this->server_socket_closed = true;
     }
 
     void serverShutdown() {
