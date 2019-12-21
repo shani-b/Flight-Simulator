@@ -102,7 +102,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
         if (output.front().getType() == Number) {
             //check if its a variable in our list
             if (isVarInList(output.front().getSymbol())) {
-                Variable *var = new Variable(m_listOfVar[output.front().getSymbol()]->getVar()
+                Variable *var = new Variable(m_listOfVar[output.front().getSymbol()]->getName()
                         ,m_listOfVar[output.front().getSymbol()]->getValue());
                 mtFinalExp.push(var);
                 output.pop_front();

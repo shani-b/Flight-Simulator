@@ -19,6 +19,7 @@ Variable::Variable(string name, double value, string sim) {
         m_name = name;
         m_value = value;
         m_sim = sim;
+        toSim = false;
     }
     else {
         throw "bad input" ;
@@ -34,6 +35,7 @@ Variable::Variable(string name, double value) {
     if (regex_match(name,regex1) || regex_match(name,regex2) || regex_match(name,regex3) || regex_match(name,regex4)) {
         m_name = name;
         m_value = value;
+        toSim = false;
     }
     else {
         throw "bad input" ;
@@ -89,6 +91,6 @@ double Variable::calculate() {
 double Variable::getValue() {
     return m_value;
 }
-string Variable::getVar() {
+string Variable::getName() {
     return m_name;
 }

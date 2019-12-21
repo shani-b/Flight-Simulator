@@ -5,39 +5,48 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include "Command.h"
-
+#include <vector>
+#include <algorithm>
 
 int DefineVar::execute(vector<string> tokens, int index) {
     //define new var
-    Variable *var = new Variable();
+    auto *var = new Variable();
     var->setName(tokens[index+1]);
 
-    //syntax: var name <-> sim njdcnsdkjn
+    //syntax: var name <-> sim "path"
     //add to the map of program
     if (tokens[index+2] == "->"){
+        var->setToSim();
         var->setSim(tokens[index +4]);
         s->addVarProg(var);
-        //add to map of simulator
     } else
     if (tokens[index+2] == "<-"){
         var->setSim(tokens[index +4]);
-        s->addVarSim(var);
+        s->addVarProg(var);
     } else if (tokens[index+2] == "="){
         s->addVarProg(var);
+        auto existingVar = s->getProg().find(tokens[index+3]);
+        if (existingVar == s->getProg().end()) {
+            throw "No var in program";
+        }
+        var->setValue(existingVar->second->getValue());
+        s->addVarProg(var);
+        /*
         Command *c = new SetVar();
         c->execute(tokens, index + 1);
+         *///TODO do we need that anymore?
     }
-    //TODO set new command for each var:
-    //m_command[index+1] = new SetVar;
 
+    //TODO set new command for each var: same ^^
+    //m_command[index+1] = new SetVar;
     return 4;
 }
 
 int SetVar::execute(vector<string> tokens, int index) {
     //syntax: name = expression
 
-    //makeing an expression from the expression
-    Interpreter *inter1 = new Interpreter();
+    //making an expression from the expression
+    auto *inter1 = new Interpreter();
     Expression *e = inter1->interpret(tokens[index + 2]);
     //set new value to the corresponding var
 
@@ -46,6 +55,7 @@ int SetVar::execute(vector<string> tokens, int index) {
     }
     auto var = s->getProg().find(tokens[index]);
     var->second->setValue(e->calculate());
+    //TODO check var->toSim : if TRUE - send data to simulator.
     return 2;
 }
 
@@ -97,14 +107,37 @@ int ServerCommand::execute(vector<string> tokens, int index) {
 
 void ServerCommand::readData(int socket) {
     cout <<"thread entered"<<endl;
-    Singleton *s = s->getInstance();
-    int i = 0;
-    char buffer[10240] = {0};
+    int i;
+    double value;
+    Singleton *s = Singleton::getInstance();
+    char buffer[1] = {0};
+    char curVar[100] = {0};
+    vector<double> variables;
+
     while (s->serverStatus()) {
-        i++;
-        cout << i << endl;
-        read(socket , buffer, 1024);
-        cout<<buffer<<endl<<endl;
-        sleep(1);
+        read(socket, buffer, 1);
+        for (i = 0; buffer[0] != ','; i++) {
+            if (buffer[0] == '\n') {
+                break;
+            }
+            curVar[i] = buffer[0];
+            read(socket, buffer, 1);
+        }
+        value = stod(curVar);
+        variables.push_back(value);
+        fill(curVar, curVar + i, 0);
+        if (buffer[0] == '\n') {
+            updateData(variables);
+            variables.clear();
+        }
+    }
+}
+
+void ServerCommand::updateData(vector<double> vars) {
+    int i;
+    for (i = 0; i < vars.size(); i++) {
+        switch (i) {
+            case 1:
+        }
     }
 }

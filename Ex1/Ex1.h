@@ -72,6 +72,7 @@ public:
 
 class Variable : public Expression{
     //members
+    bool toSim;
     string m_name;
     double m_value;
     string m_sim;
@@ -83,6 +84,7 @@ public:
     void setValue(double value);
     void setName(string name);
     void setSim(string sim);
+    void setToSim();
     Variable& operator ++();
     Variable& operator --();
     Variable& operator +=(const double &num);
@@ -91,7 +93,7 @@ public:
     Variable& operator--(int);
     double calculate();
     double getValue();
-    string getVar();
+    string getName();
 
 };
 

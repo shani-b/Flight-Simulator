@@ -34,11 +34,11 @@ public:
     }
 
     void addVarProg(Variable *var) {
-        this -> progVars[var->getVar()] = var;
+        this -> progVars[var->getName()] = var;
     }
 
     void addVarSim(Variable *var) {
-        this -> simVars[var->getVar()] = var;
+        this -> simVars[var->getName()] = var;
     }
 
     bool serverStatus() {
