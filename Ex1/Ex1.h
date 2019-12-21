@@ -6,7 +6,7 @@
 #define UNTITLED_EX1_H
 
 #include "Expression.h"
-#include "Token.h"
+#include "../Token.h"
 #include <map>
 #include <unordered_map>
 #include <deque>
@@ -72,6 +72,7 @@ public:
 
 class Variable : public Expression{
     //members
+    bool toSim;
     string m_name;
     double m_value;
     string m_sim;
@@ -83,6 +84,7 @@ public:
     void setValue(double value);
     void setName(string name);
     void setSim(string sim);
+    void setToSim();
     Variable& operator ++();
     Variable& operator --();
     Variable& operator +=(const double &num);
@@ -91,8 +93,10 @@ public:
     Variable& operator--(int);
     double calculate();
     double getValue();
-    string getVar();
+    string getName();
+    string getSim();
 
+    bool isToSim() const;
 };
 
 class Value: public Expression {

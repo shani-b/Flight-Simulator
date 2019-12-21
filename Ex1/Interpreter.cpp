@@ -3,8 +3,8 @@
 //
 
 #include "Ex1.h"
-#include "Token.h"
-#include "Singelton.h"
+#include "../Token.h"
+#include "../Singelton.h"
 #include <deque>
 #include <stack>
 #include <iostream>
@@ -102,7 +102,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
         if (output.front().getType() == Number) {
             //check if its a variable in our list
             if (isVarInList(output.front().getSymbol())) {
-                Variable *var = new Variable(m_listOfVar[output.front().getSymbol()]->getVar()
+                Variable *var = new Variable(m_listOfVar[output.front().getSymbol()]->getName()
                         ,m_listOfVar[output.front().getSymbol()]->getValue());
                 mtFinalExp.push(var);
                 output.pop_front();

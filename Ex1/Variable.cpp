@@ -19,6 +19,7 @@ Variable::Variable(string name, double value, string sim) {
         m_name = name;
         m_value = value;
         m_sim = sim;
+        toSim = false;
     }
     else {
         throw "bad input" ;
@@ -34,6 +35,7 @@ Variable::Variable(string name, double value) {
     if (regex_match(name,regex1) || regex_match(name,regex2) || regex_match(name,regex3) || regex_match(name,regex4)) {
         m_name = name;
         m_value = value;
+        toSim = false;
     }
     else {
         throw "bad input" ;
@@ -47,7 +49,11 @@ void Variable::setValue(double value) {
     m_value = value;
 }
 void Variable::setSim(string sim) {
-    m_sim = sim;
+    m_sim = sim.substr(2, sim.size() - 3); // to delete the '/' in the beginning
+}
+
+void Variable::setToSim() {
+    toSim = true;
 }
 Variable& Variable::operator ++() {
     ++m_value;
@@ -89,6 +95,13 @@ double Variable::calculate() {
 double Variable::getValue() {
     return m_value;
 }
-string Variable::getVar() {
+string Variable::getName() {
     return m_name;
+}
+string Variable::getSim() {
+    return m_sim;
+}
+
+bool Variable::isToSim() const {
+    return toSim;
 }

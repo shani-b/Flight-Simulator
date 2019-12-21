@@ -1,4 +1,4 @@
-/snap/clion/98/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/shani/CLionProjects/Flight-Simulator
+/snap/clion/99/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ofeks/CLionProjects/Flight-Simulator
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug
+-- Build files have been written to: /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug
