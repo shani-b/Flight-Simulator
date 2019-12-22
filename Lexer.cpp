@@ -23,7 +23,12 @@ vector <string> Lexer::lexer(const char *fileName) {
 
         for (int i = 0; i < line.length(); i++) {
 
-            if (line[i] == '=') {
+            if ((str == "while") || (str == "if")) {
+                tokens.push_back(str);
+                str = "";
+                inStr = true;
+            }
+            if (line[i] == '=' && !inStr) {
                 if (!str.empty()){
                     tokens.push_back(str);
                 }
@@ -51,13 +56,18 @@ vector <string> Lexer::lexer(const char *fileName) {
                     }
                     str = "";
                 }
-            }else {
-                str += line[i];
-            }
-            if (line[i] == '{' | line[i] == '}') {
+            } else if (line[i] == '{' | line[i] == '}') {
+                if (!str.empty()){
+                    tokens.push_back(str);
+                }
+                str = line[i];
                 tokens.push_back(str);
                 str = "";
+                inStr = false;
+            } else {
+                str += line[i];
             }
+
         }
         if (!str.empty()){
             tokens.push_back(str);

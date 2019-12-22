@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-enum typeToken {Operator, Number, LeftBrace, RightBrace};
+enum typeToken {Operator, Number, LeftBrace, RightBrace, ConditionOperator};
 //enum priority {Braces=20, First=10, Second=5};
 
 class Token {

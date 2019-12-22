@@ -36,7 +36,8 @@ public:
     }
 
     void addVarSim(Variable *var) {
-        this -> simVars[var->getVar()] = var;
+        this -> simVars[var->getSim()] = var;
+        this -> progVars[var->getVar()] = var;
     }
 };
 

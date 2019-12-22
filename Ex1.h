@@ -92,6 +92,7 @@ public:
     double calculate();
     double getValue();
     string getVar();
+    string getSim();
 
 };
 
@@ -103,9 +104,17 @@ public:
     double calculate();
 };
 
+class BooleanExpression: public BinaryOperator{
+    string m_operator;
+public:
+    BooleanExpression(Expression* left, Expression* right, string operat):BinaryOperator(left, right), m_operator(operat){}
+    double calculate();
+};
+
 class Interpreter {
     //map<string, Variable*> m_listOfVar;
     unordered_map<string, Variable*> m_listOfVar;
+
 public:
     Interpreter();
     virtual ~Interpreter();

@@ -15,6 +15,9 @@ Token::Token(typeToken type, string symbol) {
             m_priority = 1;
         } else if (symbol == "%" || symbol == "$") {
             m_priority = 2;
+        } else if (symbol == "<" || symbol == ">" || symbol == "<="|| symbol == ">="
+                   || symbol == "==" || symbol == "!=") {
+            m_priority = -1;
         }
 }
 
@@ -27,7 +30,11 @@ Token::Token(typeToken type, char symbol) {
         m_priority = 1;
     } else if (symbol == '%' || symbol == '$') {
         m_priority = 2;
+    } else if (symbol == '<' || symbol == '>' || symbol == '<=' || symbol == '>='
+               || symbol == '==' || symbol == '!=') {
+        m_priority = -1;
     }
+
 
 }
 
@@ -36,6 +43,7 @@ void Token::addToSymbol(char symbol) {
 }
 
 typeToken Token:: getType() {
+
     return m_type;
 }
 string Token::getSymbol() {

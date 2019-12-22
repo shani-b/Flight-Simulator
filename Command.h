@@ -28,4 +28,35 @@ public:
     int execute(vector<string> tokens,int index);
 };
 
+class ConditionParser: public Command{
+protected:
+    //boolean Expression
+    Expression *m_condition;
+    vector<string> m_scopeTokens;
+    int m_indexToJump;
+public:
+    virtual int execute(vector<string> tokens,int index);
+};
+
+class LoopCommand: public ConditionParser{
+public:
+    int execute(vector<string> tokens,int index);
+
+};
+
+class IfCommand: public ConditionParser{
+public:
+    int execute(vector<string> tokens,int index);
+};
+
+class PrintCommand: public Command{
+public:
+    int execute(vector<string> tokens,int index);
+};
+
+class SleepCommand: public Command{
+public:
+    int execute(vector<string> tokens, int index);
+};
+
 #endif //FLIGHT_SIMULATOR_COMMAND_H

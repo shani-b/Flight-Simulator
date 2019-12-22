@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/shani/CLionProjects/Flight-Simulator/BinaryOperator.cpp" "/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o"
+  "/home/shani/CLionProjects/Flight-Simulator/BooleanExpression.cpp" "/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o"
   "/home/shani/CLionProjects/Flight-Simulator/Command.cpp" "/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Command.cpp.o"
   "/home/shani/CLionProjects/Flight-Simulator/Div.cpp" "/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Div.cpp.o"
   "/home/shani/CLionProjects/Flight-Simulator/Interpreter.cpp" "/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o"

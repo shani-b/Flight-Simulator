@@ -16,7 +16,6 @@ class Lexer {
 public:
     Lexer() {}
     vector<string> lexer(const char *fileName);
-
 };
 
 
@@ -26,6 +25,10 @@ public:
     Parser() {
         m_commands["var"] = new DefineVar;
         m_commands["default"] = new SetVar;
+        m_commands["while"] = new LoopCommand;
+        m_commands["if"] = new IfCommand;
+        m_commands["Print"] = new PrintCommand;
+        m_commands["Sleep"] = new SleepCommand;
     }
     void parse(vector<string> tokens);
 };

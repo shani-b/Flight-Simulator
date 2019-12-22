@@ -6,9 +6,15 @@ CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o: ../Ex1.h
 CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o: ../Expression.h
 CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o: ../Token.h
 
+CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o: ../BooleanExpression.cpp
+CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o: ../Ex1.h
+CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o: ../Expression.h
+CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o: ../Token.h
+
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Command.cpp
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Command.h
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Ex1.h
+CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Ex3.h
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Expression.h
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Singelton.h
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Token.h

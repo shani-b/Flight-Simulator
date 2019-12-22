@@ -9,6 +9,12 @@
 /home/shani/CLionProjects/Flight-Simulator/Command.cpp
 Command.h
 /home/shani/CLionProjects/Flight-Simulator/Command.h
+Ex3.h
+/home/shani/CLionProjects/Flight-Simulator/Ex3.h
+iostream
+-
+thread
+-
 
 /home/shani/CLionProjects/Flight-Simulator/Command.h
 Singelton.h
@@ -32,7 +38,47 @@ deque
 string
 -
 
+/home/shani/CLionProjects/Flight-Simulator/Ex3.h
+Singelton.h
+/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+Command.h
+/home/shani/CLionProjects/Flight-Simulator/Command.h
+string
+-
+unordered_map
+-
+vector
+-
+
 /home/shani/CLionProjects/Flight-Simulator/Expression.h
+
+/home/shani/CLionProjects/Flight-Simulator/Interpreter.cpp
+Ex1.h
+/home/shani/CLionProjects/Flight-Simulator/Ex1.h
+Token.h
+/home/shani/CLionProjects/Flight-Simulator/Token.h
+Singelton.h
+/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+deque
+-
+stack
+-
+iostream
+-
+algorithm
+-
+
+/home/shani/CLionProjects/Flight-Simulator/Lexer.cpp
+Ex3.h
+/home/shani/CLionProjects/Flight-Simulator/Ex3.h
+fstream
+-
+
+/home/shani/CLionProjects/Flight-Simulator/Parser.cpp
+Ex3.h
+/home/shani/CLionProjects/Flight-Simulator/Ex3.h
+Command.h
+/home/shani/CLionProjects/Flight-Simulator/Command.h
 
 /home/shani/CLionProjects/Flight-Simulator/Singelton.h
 Ex1.h
@@ -43,4 +89,16 @@ unordered_map
 /home/shani/CLionProjects/Flight-Simulator/Token.h
 string
 -
+
+/home/shani/CLionProjects/Flight-Simulator/main.cpp
+string
+-
+iostream
+-
+vector
+-
+Singelton.h
+/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+Ex3.h
+/home/shani/CLionProjects/Flight-Simulator/Ex3.h
 

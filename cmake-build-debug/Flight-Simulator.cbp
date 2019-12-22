@@ -87,6 +87,9 @@
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/BinaryOperator.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/BooleanExpression.cpp">
+			<Option target="Flight-Simulator"/>
+		</Unit>
 		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Command.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>

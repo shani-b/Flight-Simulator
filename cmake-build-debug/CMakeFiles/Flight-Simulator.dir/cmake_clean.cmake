@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.o"
+  "CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o"
   "CMakeFiles/Flight-Simulator.dir/Command.cpp.o"
   "CMakeFiles/Flight-Simulator.dir/Div.cpp.o"
   "CMakeFiles/Flight-Simulator.dir/Interpreter.cpp.o"

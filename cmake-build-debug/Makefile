@@ -150,6 +150,33 @@ BinaryOperator.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BinaryOperator.cpp.s
 .PHONY : BinaryOperator.cpp.s
 
+BooleanExpression.o: BooleanExpression.cpp.o
+
+.PHONY : BooleanExpression.o
+
+# target to build an object file
+BooleanExpression.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o
+.PHONY : BooleanExpression.cpp.o
+
+BooleanExpression.i: BooleanExpression.cpp.i
+
+.PHONY : BooleanExpression.i
+
+# target to preprocess a source file
+BooleanExpression.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.i
+.PHONY : BooleanExpression.cpp.i
+
+BooleanExpression.s: BooleanExpression.cpp.s
+
+.PHONY : BooleanExpression.s
+
+# target to generate assembly for a file
+BooleanExpression.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.s
+.PHONY : BooleanExpression.cpp.s
+
 Command.o: Command.cpp.o
 
 .PHONY : Command.o
@@ -567,6 +594,9 @@ help:
 	@echo "... BinaryOperator.o"
 	@echo "... BinaryOperator.i"
 	@echo "... BinaryOperator.s"
+	@echo "... BooleanExpression.o"
+	@echo "... BooleanExpression.i"
+	@echo "... BooleanExpression.s"
 	@echo "... Command.o"
 	@echo "... Command.i"
 	@echo "... Command.s"

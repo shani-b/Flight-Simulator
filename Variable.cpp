@@ -92,3 +92,6 @@ double Variable::getValue() {
 string Variable::getVar() {
     return m_name;
 }
+string Variable::getSim() {
+    return m_sim;
+}
