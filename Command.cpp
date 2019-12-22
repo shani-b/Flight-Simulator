@@ -7,34 +7,33 @@
 #include "Command.h"
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <thread>
+#include "Parser.h"
+
+using namespace std;
 
 int DefineVar::execute(vector<string> tokens, int index) {
     //define new var
-    int diff = 0;
     auto *var = new Variable();
     var->setName(tokens[index+1]);
 
     //syntax: var name <-> sim "path"
-    if (tokens[index+2] == "->"){
+    if (tokens[index+2] == "->") {
         var->setToSim();
         var->setSim(tokens[index +4]);
         s->addVarProg(var);
-    } else
-    if (tokens[index+2] == "<-"){
+    } else if (tokens[index+2] == "<-") {
         var->setSim(tokens[index +4]);
         s->addVarProg(var);
         s->addVarSim(var);
-    } else if (tokens[index+2] == "="){;
-        diff = 1; // to makeup for the 1 less token used
+    } else if (tokens[index+2] == "=") {
         s->addVarProg(var);
-        auto existingVar = s->getProg().find(tokens[index+3]);
-        if (existingVar == s->getProg().end()) {
-            throw "No var in program";
-        }
-        var->setValue(existingVar->second->getValue());
-        s->addVarProg(var);
+        Command *c = new SetVar();
+        c->execute(tokens, index + 1);
+        return 3;
     }
-    return 4 - diff;
+    return 4;
 }
 
 int SetVar::execute(vector<string> tokens, int index) {
@@ -43,8 +42,8 @@ int SetVar::execute(vector<string> tokens, int index) {
     //making an expression from the expression
     auto *inter1 = new Interpreter();
     Expression *e = inter1->interpret(tokens[index + 2]);
-    //set new value to the corresponding var
 
+    //set new value to the corresponding var
     if (s->getProg().find(tokens[index]) == s->getProg().end()){
         throw "No var in program";
     }
@@ -52,6 +51,65 @@ int SetVar::execute(vector<string> tokens, int index) {
     var->second->setValue(e->calculate());
     //TODO check var->toSim : if TRUE - send data to simulator.
     return 2;
+}
+
+int IfCommand::execute(vector<string> tokens, int index) {
+
+    //call parent execute function
+    ConditionParser::execute(tokens,index);
+
+    Parser parserForScope;
+
+    if (m_condition->calculate()) {
+        parserForScope.parse(m_scopeTokens);
+    }
+
+    return m_indexToJump;
+}
+
+int LoopCommand::execute(vector<string> tokens, int index) {
+
+    //call parent execute function
+    ConditionParser::execute(tokens,index);
+
+    Parser parserForScope;
+
+    while (m_condition->calculate()) {
+        parserForScope.parse(m_scopeTokens);
+    }
+
+    return m_indexToJump;
+}
+
+int ConditionParser::execute(vector<string> tokens, int index) {
+    //create boolean expression from condition:
+    Interpreter interpretConditionl;
+    m_condition = interpretConditionl.interpret(tokens[index +1]);
+
+
+    //crate new array of tokens to the scope
+    vector<string>::const_iterator first = tokens.begin() + index + 3;
+    int i = 0;
+    for (i = index + 3; i< tokens.size(); i++) {
+        if (tokens[i] == "}")
+            break;
+    }
+    vector<string>::const_iterator last = tokens.begin() + i;
+    vector<string> scopeTockens(first, last);
+    m_scopeTokens = scopeTockens;
+    m_indexToJump = i - index;
+
+}
+
+int PrintCommand::execute(vector<string> tokens, int index) {
+    cout<< tokens[index+1];
+    return 1;
+}
+
+int SleepCommand::execute(vector<string> tokens, int index) {
+    int time = stoi(tokens[index +1]);
+    this_thread::sleep_for(chrono::milliseconds(time));
+    return 1;
 }
 
 int ServerCommand::execute(vector<string> tokens, int index) {
@@ -250,9 +308,10 @@ void ServerCommand::updateData(vector<double> vars) {
         if (iter == map.end()) {
             continue;
         } else {
-            if (!iter->second->isToSim())
-            iter->second->setValue(vars[i]);
-            cout << iter->second->getName() << " = " << iter->second->getValue() << endl;
+            if (!iter->second->isToSim()) {
+                iter->second->setValue(vars[i]);
+                cout << iter->second->getName() << " = " << iter->second->getValue() << endl;
+            }
         }
     }
 }

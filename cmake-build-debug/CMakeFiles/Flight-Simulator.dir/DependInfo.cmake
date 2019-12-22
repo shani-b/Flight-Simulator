@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/ofeks/CLionProjects/Flight-Simulator/Command.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Command.cpp.o"
   "/home/ofeks/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o"
+  "/home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o"
   "/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Div.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o"
   "/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o"
   "/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Minus.cpp" "/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o"

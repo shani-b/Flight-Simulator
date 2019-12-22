@@ -11,6 +11,7 @@
 #include <unordered_map>
 #include <deque>
 #include <string>
+#include <utility>
 
 
 class UnaryOperator :public Expression{
@@ -102,14 +103,21 @@ public:
 class Value: public Expression {
     double m_value;
 public:
-    Value(double value);
-    ~Value(){};
-    double calculate();
+    explicit Value(double value);
+    ~Value() override = default;;
+    double calculate() override;
+};
+
+class BooleanExpression: public BinaryOperator{
+    string m_operator;
+public:
+    BooleanExpression(Expression* left, Expression* right, string operat):BinaryOperator(left, right), m_operator(move(operat)){}
+    double calculate() override;
 };
 
 class Interpreter {
-    //map<string, Variable*> m_listOfVar;
     unordered_map<string, Variable*> m_listOfVar;
+
 public:
     Interpreter();
     virtual ~Interpreter();

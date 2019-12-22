@@ -6,25 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/ofeks/CLionProjects/Flight-Simulator/Command.cpp
-netinet/in.h
--
-unistd.h
--
-Command.h
-/home/ofeks/CLionProjects/Flight-Simulator/Command.h
-vector
--
-algorithm
--
-
-/home/ofeks/CLionProjects/Flight-Simulator/Command.h
-Singelton.h
-/home/ofeks/CLionProjects/Flight-Simulator/Singelton.h
-vector
--
-iostream
--
+/home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp
+Ex1.h
+/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
 
 /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
 Expression.h
@@ -41,14 +25,6 @@ string
 -
 
 /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Expression.h
-
-/home/ofeks/CLionProjects/Flight-Simulator/Singelton.h
-Ex1/Ex1.h
-/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
-unordered_map
--
-thread
--
 
 /home/ofeks/CLionProjects/Flight-Simulator/Token.h
 string

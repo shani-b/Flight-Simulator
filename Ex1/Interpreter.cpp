@@ -8,6 +8,7 @@
 #include <deque>
 #include <stack>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -18,17 +19,16 @@ deque<Token> strToArray(string str);
 Expression* arrayToExpression(deque<Token> *tokens);
 
 Interpreter::Interpreter() {
-    Singleton *s = s->getInstance();
-    m_listOfVar = s->getProg();
 }
 
 Interpreter::~Interpreter() {
     m_listOfVar.clear();
 }
 
-
 bool Interpreter::isVarInList(string symbol) {
-    if (m_listOfVar.count(symbol)) {
+    Singleton *s = s->getInstance();
+
+    if (s->getProg().count(symbol)){
         return true;
     }
     return false;
@@ -46,6 +46,7 @@ Expression* Interpreter::interpret(string str) {
 
 Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
 
+    Singleton *s = s->getInstance();
     deque<Token> output;
     stack<Token> myStack;
 
@@ -55,7 +56,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
     for (iter = (*tokens).begin(); iter != (*tokens).end(); ++iter){
         if((*iter).getType() == Number) {
             output.push_back(*iter);
-        } else if ((*iter).getType() == Operator) {
+        } else if (((*iter).getType() == Operator ) || ((*iter).getType() == ConditionOperator)) {
             while (myStack.size() != 0 && myStack.top().getType() == Operator
                    && myStack.top().getType() != LeftBrace
                    &&((myStack.top().getPriority() > (*iter).getPriority())
@@ -79,7 +80,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
 
 
     while (myStack.size() != 0) {
-        if (myStack.top().getType() == Operator) {
+        if ((myStack.top().getType() == Operator) || (myStack.top().getType() == ConditionOperator)) {
             output.push_back(myStack.top());
             myStack.pop();
         } else {
@@ -102,8 +103,15 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
         if (output.front().getType() == Number) {
             //check if its a variable in our list
             if (isVarInList(output.front().getSymbol())) {
-                Variable *var = new Variable(m_listOfVar[output.front().getSymbol()]->getName()
-                        ,m_listOfVar[output.front().getSymbol()]->getValue());
+                Variable *var;
+                //check in which map it belong to
+                //if (s->getSim().count(output.front().getSymbol())){
+                //    var = s->getSim()[output.front().getSymbol()];
+                //} else {
+                var = s->getProg()[output.front().getSymbol()];
+                //}
+                //Variable *var = new Variable(m_listOfVar[output.front().getSymbol()]->getName()
+                //        ,m_listOfVar[output.front().getSymbol()]->getValue());
                 mtFinalExp.push(var);
                 output.pop_front();
             }
@@ -111,7 +119,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
                 mtFinalExp.push(new Value(stod(output.front().getSymbol())));
                 output.pop_front();
             };
-        } else if (output.front().getType() == Operator) {
+        } else if ((output.front().getType() == Operator) || (output.front().getType() == ConditionOperator)) {
             flag = true;
             a = mtFinalExp.top();
             mtFinalExp.pop();
@@ -129,13 +137,17 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
                     mtFinalExp.push(new Minus(b, a));
                 } else if (output.front().getSymbol() == "*") {
                     mtFinalExp.push(new Mul(a,b));
-                } else { // id '/;
+                } else if (output.front().getSymbol() == "/") {
                     mtFinalExp.push(new Div(b,a));
+                } else // all condition operator
+                {
+                    mtFinalExp.push(new BooleanExpression(b,a, output.front().getSymbol()));
                 }
             }
-
             output.pop_front();
         }
+
+
     }/// end while
 
     if (flag) {
@@ -170,8 +182,8 @@ bool isStrNum(string str) {
 }
 
 deque<Token> strToArray(string s) {
-    //adding 0 to distinguish the unary and the binary minus
 
+    s.erase(remove(s.begin(), s.end(), ' '), s.end());
 
     for (unsigned int i = 0; i < s.size(); i++) {
         if (s[i] == '-') {
@@ -194,7 +206,7 @@ deque<Token> strToArray(string s) {
     //divide the string to an array of tokens
     bool prevNum = false;
     deque<Token> arrayOfTokens;
-    // Token *arrayOfTokens[s.size()];
+    string mergeChar = "";
 
     for (unsigned int i = 0; i < s.size();i++){
         if (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/' || s[i] == '%' || s[i] == '$') {
@@ -205,6 +217,17 @@ deque<Token> strToArray(string s) {
             prevNum = false;
         } else if (s[i] == ')') {
             arrayOfTokens.push_back(*new Token(RightBrace, s[i]));
+            prevNum = false;
+        } else if (s[i] == '<' || s[i] == '>' || s[i] == '<=' || s[i] == '>=' || s[i] == '==' || s[i] == '!='){
+            //if <= or >= or == or != : 2 chars
+            if (s[i+1] == '=') {
+                 mergeChar  = s[i];
+                 mergeChar += s[i+1];
+                arrayOfTokens.push_back(*new Token(ConditionOperator, mergeChar));
+                i++;
+            } else {
+                arrayOfTokens.push_back(*new Token(ConditionOperator, s[i]));
+            }
             prevNum = false;
         }
         else if (s[i] == ' ') {

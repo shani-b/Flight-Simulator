@@ -16,6 +16,10 @@ public:
     Parser() {
         m_commands["var"] = new DefineVar;
         m_commands["default"] = new SetVar;
+        m_commands["while"] = new LoopCommand;
+        m_commands["if"] = new IfCommand;
+        m_commands["Print"] = new PrintCommand;
+        m_commands["Sleep"] = new SleepCommand;
         m_commands["openDataServer"] = new ServerCommand;
     }
     void parse(vector<string> tokens);

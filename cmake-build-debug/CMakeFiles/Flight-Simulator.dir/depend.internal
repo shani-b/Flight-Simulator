@@ -6,10 +6,16 @@ CMakeFiles/Flight-Simulator.dir/Command.cpp.o
  /home/ofeks/CLionProjects/Flight-Simulator/Command.h
  /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
  /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Expression.h
+ /home/ofeks/CLionProjects/Flight-Simulator/Parser.h
  /home/ofeks/CLionProjects/Flight-Simulator/Singelton.h
  /home/ofeks/CLionProjects/Flight-Simulator/Token.h
 CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o
  /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp
+ /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
+ /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Expression.h
+ /home/ofeks/CLionProjects/Flight-Simulator/Token.h
+CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o
+ /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp
  /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
  /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Expression.h
  /home/ofeks/CLionProjects/Flight-Simulator/Token.h
