@@ -2,8 +2,9 @@
 // Created by shani on 17/12/2019.
 //
 
-#include "Ex3.h"
 #include "Command.h"
+#include "Parser.h"
+#include "Lexer.h"
 
 void Parser::parse(vector<string> tokens){
 
@@ -15,13 +16,12 @@ void Parser::parse(vector<string> tokens){
 
 
         auto token = tokens[i];
+        // DEBUG cout << token << " " << tokens[i+1] << " " << tokens[i+2] << " " << tokens[i+3] << " " << tokens[i+4] << endl;
         auto it = m_commands.find(tokens[i]);
         if (it == m_commands.end()){
             it = m_commands.find("default");
         }
         Command *c = it->second;
-
-
 
         if (c != nullptr) {
             i += (c->execute(tokens, i));

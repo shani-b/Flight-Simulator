@@ -1,23 +1,14 @@
 //
-// Created by shani on 17/12/2019.
+// Created by ofek on 18/12/2019.
 //
 
-#ifndef FLIGHT_SIMULATOR_EX3_H
-#define FLIGHT_SIMULATOR_EX3_H
-
+#ifndef FLIGHT_SIMULATOR_PARSER_H
+#define FLIGHT_SIMULATOR_PARSER_H
 #include "Singelton.h"
 #include "Command.h"
 #include <string>
 #include <unordered_map>
 #include <vector>
-using namespace std;
-
-class Lexer {
-public:
-    Lexer() {}
-    vector<string> lexer(const char *fileName);
-};
-
 
 class Parser {
     unordered_map <string,Command*> m_commands;
@@ -29,9 +20,8 @@ public:
         m_commands["if"] = new IfCommand;
         m_commands["Print"] = new PrintCommand;
         m_commands["Sleep"] = new SleepCommand;
+        m_commands["openDataServer"] = new ServerCommand;
     }
     void parse(vector<string> tokens);
 };
-
-
-#endif //FLIGHT_SIMULATOR_EX3_H
+#endif //FLIGHT_SIMULATOR_PARSER_H

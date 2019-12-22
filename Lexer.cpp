@@ -2,7 +2,7 @@
 // Created by shani on 17/12/2019.
 //
 
-#include "Ex3.h"
+#include "Lexer.h"
 #include <fstream>
 
 vector <string> Lexer::lexer(const char *fileName) {
