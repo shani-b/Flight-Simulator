@@ -43,10 +43,10 @@ RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ofeks/CLionProjects/Flight-Simulator
+CMAKE_SOURCE_DIR = /home/shani/CLionProjects/Flight-Simulator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Flight-Simulator.dir/depend.make
@@ -59,224 +59,224 @@ include CMakeFiles/Flight-Simulator.dir/flags.make
 
 CMakeFiles/Flight-Simulator.dir/main.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Flight-Simulator.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/main.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Flight-Simulator.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/main.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/main.cpp
 
 CMakeFiles/Flight-Simulator.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/main.cpp > CMakeFiles/Flight-Simulator.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/main.cpp > CMakeFiles/Flight-Simulator.dir/main.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/main.cpp -o CMakeFiles/Flight-Simulator.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/main.cpp -o CMakeFiles/Flight-Simulator.dir/main.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Command.cpp.o: ../Command.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Flight-Simulator.dir/Command.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Command.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Command.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Flight-Simulator.dir/Command.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Command.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Command.cpp
 
 CMakeFiles/Flight-Simulator.dir/Command.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Command.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Command.cpp > CMakeFiles/Flight-Simulator.dir/Command.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Command.cpp > CMakeFiles/Flight-Simulator.dir/Command.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Command.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Command.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Command.cpp -o CMakeFiles/Flight-Simulator.dir/Command.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Command.cpp -o CMakeFiles/Flight-Simulator.dir/Command.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o: ../Ex1/Minus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Minus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Minus.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Minus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Minus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Minus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Minus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Minus.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.o: ../Ex1/Plus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Plus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Plus.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Plus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Plus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Plus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Plus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Plus.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.o: ../Ex1/UMinus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/UMinus.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.o: ../Ex1/UPlus.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/UPlus.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o: ../Ex1/Div.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Div.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Div.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Div.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Div.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Div.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Div.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Div.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.o: ../Ex1/Mul.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Mul.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Mul.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Mul.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Mul.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Mul.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Mul.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Mul.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Token.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Token.cpp.o: ../Token.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Flight-Simulator.dir/Token.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Token.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Token.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Flight-Simulator.dir/Token.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Token.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Token.cpp
 
 CMakeFiles/Flight-Simulator.dir/Token.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Token.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Token.cpp > CMakeFiles/Flight-Simulator.dir/Token.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Token.cpp > CMakeFiles/Flight-Simulator.dir/Token.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Token.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Token.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Token.cpp -o CMakeFiles/Flight-Simulator.dir/Token.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Token.cpp -o CMakeFiles/Flight-Simulator.dir/Token.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o: ../Ex1/Interpreter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Interpreter.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.o: ../Ex1/UnaryOperator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/UnaryOperator.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o: ../Ex1/BinaryOperator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o: ../Ex1/Value.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Value.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Value.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Value.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Value.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Value.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o: ../Ex1/Variable.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Variable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/Variable.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Variable.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/Variable.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Variable.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/Variable.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o: ../Lexer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Lexer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Lexer.cpp
 
 CMakeFiles/Flight-Simulator.dir/Lexer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Lexer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Lexer.cpp > CMakeFiles/Flight-Simulator.dir/Lexer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Lexer.cpp > CMakeFiles/Flight-Simulator.dir/Lexer.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Lexer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Lexer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Lexer.cpp -o CMakeFiles/Flight-Simulator.dir/Lexer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Lexer.cpp -o CMakeFiles/Flight-Simulator.dir/Lexer.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Parser.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Parser.cpp.o: ../Parser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Flight-Simulator.dir/Parser.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Parser.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Flight-Simulator.dir/Parser.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Parser.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Parser.cpp
 
 CMakeFiles/Flight-Simulator.dir/Parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Parser.cpp > CMakeFiles/Flight-Simulator.dir/Parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Parser.cpp > CMakeFiles/Flight-Simulator.dir/Parser.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Parser.cpp -o CMakeFiles/Flight-Simulator.dir/Parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Parser.cpp -o CMakeFiles/Flight-Simulator.dir/Parser.cpp.s
 
 CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
 CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o: ../Ex1/BooleanExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp
 
 CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i
 
 CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s
 
 # Object files for target Flight-Simulator
 Flight__Simulator_OBJECTS = \
@@ -320,7 +320,7 @@ Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Parser.cpp.o
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/build.make
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Flight-Simulator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Flight-Simulator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Flight-Simulator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -333,6 +333,6 @@ CMakeFiles/Flight-Simulator.dir/clean:
 .PHONY : CMakeFiles/Flight-Simulator.dir/clean
 
 CMakeFiles/Flight-Simulator.dir/depend:
-	cd /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ofeks/CLionProjects/Flight-Simulator /home/ofeks/CLionProjects/Flight-Simulator /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug /home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/shani/CLionProjects/Flight-Simulator /home/shani/CLionProjects/Flight-Simulator /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug /home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles/Flight-Simulator.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Flight-Simulator.dir/depend
 
