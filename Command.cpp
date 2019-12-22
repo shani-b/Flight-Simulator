@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <iostream>
 #include <thread>
+#include "Parser.h"
 
 using namespace std;
 
@@ -47,7 +48,6 @@ int SetVar::execute(vector<string> tokens, int index) {
         throw "No var in program";
     }
     auto var = s->getProg().find(tokens[index]);
-    double x = e->calculate();
     var->second->setValue(e->calculate());
     //TODO check var->toSim : if TRUE - send data to simulator.
     return 2;
@@ -107,8 +107,8 @@ int PrintCommand::execute(vector<string> tokens, int index) {
 }
 
 int SleepCommand::execute(vector<string> tokens, int index) {
-    int time = stod(tokens[index +1]);
-    literals::chrono_literals::this_thread::sleep_for(chrono::milliseconds(time));
+    int time = stoi(tokens[index +1]);
+    this_thread::sleep_for(chrono::milliseconds(time));
     return 1;
 }
 
@@ -308,9 +308,10 @@ void ServerCommand::updateData(vector<double> vars) {
         if (iter == map.end()) {
             continue;
         } else {
-            if (!iter->second->isToSim())
-            iter->second->setValue(vars[i]);
-            cout << iter->second->getName() << " = " << iter->second->getValue() << endl;
+            if (!iter->second->isToSim()) {
+                iter->second->setValue(vars[i]);
+                cout << iter->second->getName() << " = " << iter->second->getValue() << endl;
+            }
         }
     }
 }

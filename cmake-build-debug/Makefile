@@ -163,34 +163,6 @@ Ex1/BinaryOperator.i: Ex1/BinaryOperator.cpp.i
 
 .PHONY : Ex1/BinaryOperator.i
 
-BooleanExpression.o: BooleanExpression.cpp.o
-
-.PHONY : BooleanExpression.o
-
-# target to build an object file
-BooleanExpression.cpp.o:
-	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o
-.PHONY : BooleanExpression.cpp.o
-
-BooleanExpression.i: BooleanExpression.cpp.i
-
-.PHONY : BooleanExpression.i
-
-# target to preprocess a source file
-BooleanExpression.cpp.i:
-	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.i
-.PHONY : BooleanExpression.cpp.i
-
-BooleanExpression.s: BooleanExpression.cpp.s
-
-.PHONY : BooleanExpression.s
-
-# target to generate assembly for a file
-BooleanExpression.cpp.s:
-	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.s
-.PHONY : BooleanExpression.cpp.s
-
-
 # target to preprocess a source file
 Ex1/BinaryOperator.cpp.i:
 	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.i
@@ -204,6 +176,33 @@ Ex1/BinaryOperator.s: Ex1/BinaryOperator.cpp.s
 Ex1/BinaryOperator.cpp.s:
 	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Ex1/BinaryOperator.cpp.s
 .PHONY : Ex1/BinaryOperator.cpp.s
+
+Ex1/BooleanExpression.o: Ex1/BooleanExpression.cpp.o
+
+.PHONY : Ex1/BooleanExpression.o
+
+# target to build an object file
+Ex1/BooleanExpression.cpp.o:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o
+.PHONY : Ex1/BooleanExpression.cpp.o
+
+Ex1/BooleanExpression.i: Ex1/BooleanExpression.cpp.i
+
+.PHONY : Ex1/BooleanExpression.i
+
+# target to preprocess a source file
+Ex1/BooleanExpression.cpp.i:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i
+.PHONY : Ex1/BooleanExpression.cpp.i
+
+Ex1/BooleanExpression.s: Ex1/BooleanExpression.cpp.s
+
+.PHONY : Ex1/BooleanExpression.s
+
+# target to generate assembly for a file
+Ex1/BooleanExpression.cpp.s:
+	$(MAKE) -f CMakeFiles/Flight-Simulator.dir/build.make CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s
+.PHONY : Ex1/BooleanExpression.cpp.s
 
 Ex1/Div.o: Ex1/Div.cpp.o
 
@@ -598,6 +597,9 @@ help:
 	@echo "... Ex1/BinaryOperator.o"
 	@echo "... Ex1/BinaryOperator.i"
 	@echo "... Ex1/BinaryOperator.s"
+	@echo "... Ex1/BooleanExpression.o"
+	@echo "... Ex1/BooleanExpression.i"
+	@echo "... Ex1/BooleanExpression.s"
 	@echo "... Ex1/Div.o"
 	@echo "... Ex1/Div.i"
 	@echo "... Ex1/Div.s"

@@ -265,18 +265,18 @@ CMakeFiles/Flight-Simulator.dir/Parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Parser.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Parser.cpp -o CMakeFiles/Flight-Simulator.dir/Parser.cpp.s
 
-CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
-CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o: ../BooleanExpression.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o -c /home/shani/CLionProjects/Flight-Simulator/BooleanExpression.cpp
+CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o: CMakeFiles/Flight-Simulator.dir/flags.make
+CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o: ../Ex1/BooleanExpression.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o -c /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp
 
-CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/shani/CLionProjects/Flight-Simulator/BooleanExpression.cpp > CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.i
+CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp > CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.i
 
-CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/shani/CLionProjects/Flight-Simulator/BooleanExpression.cpp -o CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.s
+CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ofeks/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp -o CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.s
 
 # Object files for target Flight-Simulator
 Flight__Simulator_OBJECTS = \
@@ -296,7 +296,7 @@ Flight__Simulator_OBJECTS = \
 "CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o" \
 "CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o" \
 "CMakeFiles/Flight-Simulator.dir/Parser.cpp.o" \
-"CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o"
+"CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o"
 
 # External object files for target Flight-Simulator
 Flight__Simulator_EXTERNAL_OBJECTS =
@@ -317,7 +317,7 @@ Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Ex1/Value.cpp.o
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Ex1/Variable.cpp.o
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Lexer.cpp.o
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Parser.cpp.o
-Flight-Simulator: CMakeFiles/Flight-Simulator.dir/BooleanExpression.cpp.o
+Flight-Simulator: CMakeFiles/Flight-Simulator.dir/Ex1/BooleanExpression.cpp.o
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/build.make
 Flight-Simulator: CMakeFiles/Flight-Simulator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ofeks/CLionProjects/Flight-Simulator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable Flight-Simulator"
