@@ -14,6 +14,7 @@ protected:
     Singleton *s = Singleton::getInstance();
 public:
     virtual int execute(vector<string> tokens,int index) = 0;
+    virtual ~Command() = default;
 };
 
 class DefineVar: public Command {
@@ -32,6 +33,13 @@ class ServerCommand: public Command {
 public:
     int execute(vector<string> tokens,int index) override;
 };
+
+class ConnectControlClient: public Command{
+    void sendCommands(int socket);
+public:
+    int execute(vector<string> tokens,int index) override;
+};
+
 
 class ConditionParser: public Command{
 protected:

@@ -10,6 +10,10 @@
 #include <iostream>
 #include <thread>
 #include "Parser.h"
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <cstring>
+
 
 using namespace std;
 
@@ -39,6 +43,8 @@ int DefineVar::execute(vector<string> tokens, int index) {
 int SetVar::execute(vector<string> tokens, int index) {
     //syntax: name = expression
 
+    string setToSim;
+
     //making an expression from the expression
     auto *inter1 = new Interpreter();
     Expression *e = inter1->interpret(tokens[index + 2]);
@@ -49,7 +55,14 @@ int SetVar::execute(vector<string> tokens, int index) {
     }
     auto var = s->getProg().find(tokens[index]);
     var->second->setValue(e->calculate());
-    //TODO check var->toSim : if TRUE - send data to simulator.
+
+    //add string to list of commands to sent to simulator
+    if (var->second->isToSim()) {
+        setToSim = "set " + var->second->getSim() + " " + to_string(var->second->getValue());
+        s->addNewCommandToSend(setToSim);
+    }
+
+
     return 2;
 }
 
@@ -314,5 +327,51 @@ void ServerCommand::updateData(vector<double> vars) {
             }
         }
     }
+}
+
+int ConnectControlClient::execute(vector<string> tokens, int index) {
+
+    //create socket
+    int client_socket = socket(AF_INET, SOCK_STREAM, 0);
+    if (client_socket == -1) {
+        //error
+        std::cerr << "Could not create a socket"<<std::endl;
+        return -1;
+    }
+
+    //We need to create a sockaddr obj to hold address of server
+    sockaddr_in address; //in means IP4
+    address.sin_family = AF_INET;//IP4
+    address.sin_addr.s_addr = inet_addr("127.0.0.1");  //the localhost address
+    address.sin_port = htons(stoi(tokens[index +2]));
+    //we need to convert our number (both port & localhost)
+    // to a number that the network understands.
+
+    thread t1([this, client_socket] { this->sendCommands(client_socket); });
+    t1.detach();
+}
+
+void ConnectControlClient::sendCommands(int client_socket) {
+
+    Singleton *s = s->getInstance();
+    string commandToSend;
+    char* toSend;
+
+    while (toSend != NULL) {   //TODO mutex
+        if (!s->getCommandsToSend().empty()) {
+            commandToSend = s->getCommandsToSend().front();
+            toSend = (char*) malloc (sizeof(char) * (commandToSend.size() +1));
+            s->getCommandsToSend().pop_front();
+
+            int is_sent = send(client_socket , toSend , strlen(toSend), 0 );
+            if (is_sent == -1) {
+                std::cout<<"Error sending message"<<std::endl;
+            } else {
+                std::cout<<"Hello message sent to server" <<std::endl;
+            }
+            free(toSend);
+        }
+    }
+
 }
 

@@ -13,6 +13,8 @@ class Singleton {
     static Singleton *instance;
     unordered_map<string,Variable*> progVars;
     unordered_map<string,Variable*> simVars;
+    deque<string> m_commandsToSend;
+
     bool server_flag = true;
     bool server_socket_closed = false;
 
@@ -32,6 +34,14 @@ public:
 
     unordered_map<string ,Variable*> getSim() {
         return this -> simVars;
+    }
+
+    deque<string> getCommandsToSend() {
+        return m_commandsToSend;
+    }
+
+    void addNewCommandToSend(string str) {
+        m_commandsToSend.push_back(str);
     }
 
     void addVarProg(Variable *var) {

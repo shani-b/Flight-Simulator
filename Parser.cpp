@@ -30,3 +30,15 @@ void Parser::parse(vector<string> tokens){
     }
 
 }
+
+Parser::~Parser() {
+
+    delete(m_commands["var"]);
+    delete(m_commands["default"]);
+    delete(m_commands["while"]);
+    delete(m_commands["if"]);
+    delete(m_commands["Print"]);
+    delete(m_commands["Sleep"]);
+    delete(m_commands["openDataServer"]);
+    delete(m_commands["connectControlClient"]);
+}

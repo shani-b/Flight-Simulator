@@ -13,10 +13,12 @@ using namespace std;
 Singleton *Singleton::instance = NULL;
 
 int main(int argc, char* argv[]) {
+
     Lexer lexer1;
     vector<string> tokens = lexer1.lexer("fly.txt");
     cout << "Lexing complete" <<endl;
     Parser parser1;
+
     try {
         parser1.parse(tokens);
     } catch (char const* e) {

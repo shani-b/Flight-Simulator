@@ -21,7 +21,11 @@ public:
         m_commands["Print"] = new PrintCommand;
         m_commands["Sleep"] = new SleepCommand;
         m_commands["openDataServer"] = new ServerCommand;
+        m_commands["connectControlClient"] = new ConnectControlClient;
     }
+
+     ~Parser();
+
     void parse(vector<string> tokens);
 };
 #endif //FLIGHT_SIMULATOR_PARSER_H
