@@ -218,7 +218,7 @@ deque<Token> strToArray(string s) {
         } else if (s[i] == ')') {
             arrayOfTokens.push_back(*new Token(RightBrace, s[i]));
             prevNum = false;
-        } else if (s[i] == '<' || s[i] == '>' || s[i] == '<=' || s[i] == '>=' || s[i] == '==' || s[i] == '!='){
+        } else if (s[i] == '<' || s[i] == '>' || s[i] == '=' ||  s[i] == '!'){
             //if <= or >= or == or != : 2 chars
             if (s[i+1] == '=') {
                  mergeChar  = s[i];

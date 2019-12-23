@@ -30,8 +30,7 @@ Token::Token(typeToken type, char symbol) {
         m_priority = 1;
     } else if (symbol == '%' || symbol == '$') {
         m_priority = 2;
-    } else if (symbol == '<' || symbol == '>' || symbol == '<=' || symbol == '>='
-               || symbol == '==' || symbol == '!=') {
+    } else if (symbol == '<' || symbol == '>' || symbol == '=' || symbol == '!') {
         m_priority = -1;
     }
 

@@ -115,7 +115,7 @@ int ConditionParser::execute(vector<string> tokens, int index) {
 }
 
 int PrintCommand::execute(vector<string> tokens, int index) {
-    cout<< tokens[index+1];
+    cout<< tokens[index+1]<<endl;
     return 1;
 }
 
@@ -349,15 +349,17 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
 
     thread t1([this, client_socket] { this->sendCommands(client_socket); });
     t1.detach();
+    return 2;
 }
 
 void ConnectControlClient::sendCommands(int client_socket) {
 
+    //TODO making the sendCommand atomic
     Singleton *s = s->getInstance();
     string commandToSend;
     char* toSend;
 
-    while (toSend != NULL) {   //TODO mutex
+    while (true) {   //TODO mutex
         if (!s->getCommandsToSend().empty()) {
             commandToSend = s->getCommandsToSend().front();
             toSend = (char*) malloc (sizeof(char) * (commandToSend.size() +1));
@@ -370,6 +372,8 @@ void ConnectControlClient::sendCommands(int client_socket) {
                 std::cout<<"Hello message sent to server" <<std::endl;
             }
             free(toSend);
+
+
         }
     }
 
