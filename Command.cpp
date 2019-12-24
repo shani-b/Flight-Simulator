@@ -18,6 +18,7 @@
 using namespace std;
 
 int DefineVar::execute(vector<string> tokens, int index) {
+
     //define new var
     auto *var = new Variable();
     var->setName(tokens[index+1]);
@@ -58,10 +59,11 @@ int SetVar::execute(vector<string> tokens, int index) {
 
     //add string to list of commands to sent to simulator
     if (var->second->isToSim()) {
-        setToSim = "set " + var->second->getSim() + " " + to_string(var->second->getValue());
+        setToSim = "set " + var->second->getSim() + " " + to_string(var->second->getValue()) + "\r\n";
         s->addNewCommandToSend(setToSim);
     }
 
+    delete(inter1);
 
     return 2;
 }
@@ -77,6 +79,7 @@ int IfCommand::execute(vector<string> tokens, int index) {
         parserForScope.parse(m_scopeTokens);
     }
 
+    delete(m_condition);
     return m_indexToJump;
 }
 
@@ -91,6 +94,7 @@ int LoopCommand::execute(vector<string> tokens, int index) {
         parserForScope.parse(m_scopeTokens);
     }
 
+    delete(m_condition);
     return m_indexToJump;
 }
 
@@ -115,7 +119,11 @@ int ConditionParser::execute(vector<string> tokens, int index) {
 }
 
 int PrintCommand::execute(vector<string> tokens, int index) {
-    cout<< tokens[index+1]<<endl;
+    if (tokens[index +1][0] == '"') {
+        cout<< tokens[index+1]<<endl;
+    } else  {
+        cout<< (s->getProg()[tokens[index + 1]])->getValue() <<endl;
+    }
     return 1;
 }
 
@@ -207,112 +215,112 @@ void ServerCommand::updateData(vector<double> vars) {
     for (i = 0; i < vars.size(); i++) {
         switch (i) {
             case 0:
-                iter = map.find("instrumentation/airspeed-indicator/indicated-speed-kt");
+                iter = map.find("/instrumentation/airspeed-indicator/indicated-speed-kt");
                 break;
             case 1:
-                iter = map.find("sim/time/warp");
+                iter = map.find("/sim/time/warp");
                 break;
             case 2:
-                iter = map.find("controls/switches/magnetos");
+                iter = map.find("/controls/switches/magnetos");
                 break;
             case 3:
-                iter = map.find("instrumentation/heading-indicator/offset-deg");
+                iter = map.find("/instrumentation/heading-indicator/offset-deg");
                 break;
             case 4:
-                iter = map.find("instrumentation/altimeter/indicated-altitude-ft");
+                iter = map.find("/instrumentation/altimeter/indicated-altitude-ft");
                 break;
             case 5:
-                iter = map.find("instrumentation/altimeter/pressure-alt-ft");
+                iter = map.find("/instrumentation/altimeter/pressure-alt-ft");
                 break;
             case 6:
-                iter = map.find("instrumentation/attitude-indicator/indicated-pitch-deg");
+                iter = map.find("/instrumentation/attitude-indicator/indicated-pitch-deg");
                 break;
             case 7:
-                iter = map.find("instrumentation/attitude-indicator/indicated-roll-deg");
+                iter = map.find("/instrumentation/attitude-indicator/indicated-roll-deg");
                 break;
             case 8:
-                iter = map.find("instrumentation/attitude-indicator/internal-pitch-deg");
+                iter = map.find("/instrumentation/attitude-indicator/internal-pitch-deg");
                 break;
             case 9:
-                iter = map.find("instrumentation/attitude-indicator/internal-roll-deg");
+                iter = map.find("/instrumentation/attitude-indicator/internal-roll-deg");
                 break;
             case 10:
-                iter = map.find("instrumentation/encoder/indicated-altitude-ft");
+                iter = map.find("/instrumentation/encoder/indicated-altitude-ft");
                 break;
             case 11:
-                iter = map.find("instrumentation/encoder/pressure-alt-ft");
+                iter = map.find("/instrumentation/encoder/pressure-alt-ft");
                 break;
             case 12:
-                iter = map.find("instrumentation/gps/indicated-altitude-ft");
+                iter = map.find("/instrumentation/gps/indicated-altitude-ft");
                 break;
             case 13:
-                iter = map.find("instrumentation/gps/indicated-ground-speed-kt");
+                iter = map.find("/instrumentation/gps/indicated-ground-speed-kt");
                 break;
             case 14:
-                iter = map.find("instrumentation/gps/indicated-vertical-speed");
+                iter = map.find("/instrumentation/gps/indicated-vertical-speed");
                 break;
             case 15:
-                iter = map.find("instrumentation/heading-indicator/indicated-heading-deg");
+                iter = map.find("/instrumentation/heading-indicator/indicated-heading-deg");
                 break;
             case 16:
-                iter = map.find("instrumentation/magnetic-compass/indicated-heading-deg");
+                iter = map.find("/instrumentation/magnetic-compass/indicated-heading-deg");
                 break;
             case 17:
-                iter = map.find("instrumentation/slip-skid-ball/indicated-slip-skid");
+                iter = map.find("/instrumentation/slip-skid-ball/indicated-slip-skid");
                 break;
             case 18:
-                iter = map.find("instrumentation/turn-indicator/indicated-turn-rate");
+                iter = map.find("/instrumentation/turn-indicator/indicated-turn-rate");
                 break;
             case 19:
-                iter = map.find("instrumentation/vertical-speed-indicator/indicated-speed-fpm");
+                iter = map.find("/instrumentation/vertical-speed-indicator/indicated-speed-fpm");
                 break;
             case 20:
-                iter = map.find("controls/flight/aileron");
+                iter = map.find("/controls/flight/aileron");
                 break;
             case 21:
-                iter = map.find("controls/flight/elevator");
+                iter = map.find("/controls/flight/elevator");
                 break;
             case 22:
-                iter = map.find("controls/flight/rudder");
+                iter = map.find("/controls/flight/rudder");
                 break;
             case 23:
-                iter = map.find("controls/flight/flaps");
+                iter = map.find("/controls/flight/flaps");
                 break;
             case 24:
-                iter = map.find("controls/engines/engine/throttle");
+                iter = map.find("/controls/engines/engine/throttle");
                 break;
             case 25:
-                iter = map.find("controls/engines/current-engine/throttle");
+                iter = map.find("/controls/engines/current-engine/throttle");
                 break;
             case 26:
-                iter = map.find("controls/switches/master-avionics");
+                iter = map.find("/controls/switches/master-avionics");
                 break;
             case 27:
-                iter = map.find("controls/switches/starter");
+                iter = map.find("/controls/switches/starter");
                 break;
             case 28:
-                iter = map.find("engines/active-engine/auto-start");
+                iter = map.find("/engines/active-engine/auto-start");
                 break;
             case 29:
-                iter = map.find("controls/flight/speedbrake");
+                iter = map.find("/controls/flight/speedbrake");
                 break;
             case 30:
-                iter = map.find("sim/model/c172p/brake-parking");
+                iter = map.find("/sim/model/c172p/brake-parking");
                 break;
             case 31:
-                iter = map.find("controls/engines/engine/primer");
+                iter = map.find("/controls/engines/engine/primer");
                 break;
             case 32:
-                iter = map.find("controls/engines/current-engine/mixture");
+                iter = map.find("/controls/engines/current-engine/mixture");
                 break;
             case 33:
-                iter = map.find("controls/switches/master-bat");
+                iter = map.find("/controls/switches/master-bat");
                 break;
             case 34:
-                iter = map.find("controls/switches/master-alt");
+                iter = map.find("/controls/switches/master-alt");
                 break;
             case 35:
-                iter = map.find("engines/engine/rpm");
+                iter = map.find("/engines/engine/rpm");
                 break;
             default:
                 cout << "didnt find var in simVar - updateData  i = " << i << endl;
@@ -322,8 +330,9 @@ void ServerCommand::updateData(vector<double> vars) {
             continue;
         } else {
             if (!iter->second->isToSim()) {
+                double temp = iter->second->getValue();
                 iter->second->setValue(vars[i]);
-                cout << iter->second->getName() << " = " << iter->second->getValue() << endl;
+
             }
         }
     }
@@ -347,6 +356,16 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
     //we need to convert our number (both port & localhost)
     // to a number that the network understands.
 
+    // Requesting a connection with the server on local host with port 8081
+    int is_connect = connect(client_socket, (struct sockaddr *)&address, sizeof(address));
+    if (is_connect == -1) {
+        std::cerr << "Could not connect to host server"<<std::endl;
+        return -2;
+    } else {
+        std::cout<<"Client is now connected to server" <<std::endl;
+    }
+
+
     thread t1([this, client_socket] { this->sendCommands(client_socket); });
     t1.detach();
     return 2;
@@ -356,23 +375,22 @@ void ConnectControlClient::sendCommands(int client_socket) {
 
     //TODO making the sendCommand atomic
     Singleton *s = s->getInstance();
-    string commandToSend;
-    char* toSend;
+    const char* commandToSend;
+    string message;
 
-    while (true) {   //TODO mutex
+    while (s->getServerStatus()) {   //TODO mutex
         if (!s->getCommandsToSend().empty()) {
-            commandToSend = s->getCommandsToSend().front();
-            toSend = (char*) malloc (sizeof(char) * (commandToSend.size() +1));
-            s->getCommandsToSend().pop_front();
+            message = (s->getCommandsToSend().front());
+            commandToSend = message.c_str();
+            s->removeFrontCommand();
 
-            int is_sent = send(client_socket , toSend , strlen(toSend), 0 );
+            //int is_sent = send(client_socket , commandToSend , strlen(commandToSend), 0 );
+            ssize_t is_sent = write(client_socket , commandToSend , message.length() );
             if (is_sent == -1) {
                 std::cout<<"Error sending message"<<std::endl;
             } else {
-                std::cout<<"Hello message sent to server" <<std::endl;
+               // std::cout<< commandToSend <<std::endl;
             }
-            free(toSend);
-
 
         }
     }

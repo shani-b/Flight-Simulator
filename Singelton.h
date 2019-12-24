@@ -40,6 +40,10 @@ public:
         return m_commandsToSend;
     }
 
+    void removeFrontCommand(){
+        m_commandsToSend.pop_front();
+    }
+
     void addNewCommandToSend(string str) {
         m_commandsToSend.push_back(str);
     }

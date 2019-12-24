@@ -49,7 +49,7 @@ void Variable::setValue(double value) {
     m_value = value;
 }
 void Variable::setSim(string sim) {
-    m_sim = sim.substr(2, sim.size() - 3); // to delete the '/' in the beginning
+    m_sim = sim.substr(1, sim.size() - 2); // to delete the '/' in the beginning
 }
 
 void Variable::setToSim() {

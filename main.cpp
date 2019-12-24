@@ -22,10 +22,9 @@ int main(int argc, char* argv[]) {
     Singleton *s = Singleton::getInstance(); // for debug
 
     try {
-        s->addNewCommandToSend("set controls/flight/rudder 1");
         parser1.parse(tokens);
-    } catch (char const* e) {
-        cout << e << endl;
+    } catch (bad_alloc& e) {
+        cout << e.what() << endl;
     }
 
 

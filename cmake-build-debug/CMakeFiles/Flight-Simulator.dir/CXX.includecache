@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/home/shani/CLionProjects/Flight-Simulator/Command.cpp
+netinet/in.h
+-
+unistd.h
+-
+Command.h
+/home/shani/CLionProjects/Flight-Simulator/Command.h
+vector
+-
+algorithm
+-
+iostream
+-
+thread
+-
+Parser.h
+/home/shani/CLionProjects/Flight-Simulator/Parser.h
+sys/socket.h
+-
+arpa/inet.h
+-
+cstring
+-
+
 /home/shani/CLionProjects/Flight-Simulator/Command.h
 Singelton.h
 /home/shani/CLionProjects/Flight-Simulator/Singelton.h
@@ -32,10 +56,20 @@ utility
 
 /home/shani/CLionProjects/Flight-Simulator/Ex1/Expression.h
 
-/home/shani/CLionProjects/Flight-Simulator/Lexer.h
-string
+/home/shani/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp
+Ex1.h
+/home/shani/CLionProjects/Flight-Simulator/Ex1/Ex1.h
+../Token.h
+/home/shani/CLionProjects/Flight-Simulator/Token.h
+../Singelton.h
+/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+deque
 -
-vector
+stack
+-
+iostream
+-
+algorithm
 -
 
 /home/shani/CLionProjects/Flight-Simulator/Parser.h
@@ -61,18 +95,4 @@ thread
 /home/shani/CLionProjects/Flight-Simulator/Token.h
 string
 -
-
-/home/shani/CLionProjects/Flight-Simulator/main.cpp
-string
--
-vector
--
-unistd.h
--
-Singelton.h
-/home/shani/CLionProjects/Flight-Simulator/Singelton.h
-Lexer.h
-/home/shani/CLionProjects/Flight-Simulator/Lexer.h
-Parser.h
-/home/shani/CLionProjects/Flight-Simulator/Parser.h
 
