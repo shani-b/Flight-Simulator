@@ -14,6 +14,9 @@ Singleton *Singleton::instance = NULL;
 
 int main(int argc, char* argv[]) {
 
+
+    deque<int> ofek;
+
     Lexer lexer1;
     vector<string> tokens = lexer1.lexer("fly.txt");
     cout << "Lexing complete" <<endl;
@@ -22,10 +25,9 @@ int main(int argc, char* argv[]) {
     Singleton *s = Singleton::getInstance(); // for debug
 
     try {
-        s->addNewCommandToSend("set controls/flight/rudder 1");
         parser1.parse(tokens);
-    } catch (char const* e) {
-        cout << e << endl;
+    } catch (bad_alloc& e) {
+        cout << e.what() << endl;
     }
 
 

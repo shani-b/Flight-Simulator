@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug"/>
+				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug"/>
+				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Flight-Simulator">
-				<Option output="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Flight-Simulator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug"/>
+				<Option output="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Flight-Simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight-Simulator"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight-Simulator"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Flight-Simulator/fast">
-				<Option output="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Flight-Simulator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug"/>
+				<Option output="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Flight-Simulator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,93 +67,93 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight-Simulator/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 Flight-Simulator/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug"/>
+				<Option working_dir="/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/shani/CLionProjects/Flight-Simulator-debug/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Command.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Command.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Command.h">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Command.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/BinaryOperator.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/BinaryOperator.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/BooleanExpression.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/BooleanExpression.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Div.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Div.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Ex1.h">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Ex1.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Expression.h">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Expression.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Interpreter.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Minus.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Minus.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Mul.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Mul.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Plus.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Plus.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/UMinus.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/UMinus.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/UPlus.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/UPlus.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/UnaryOperator.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/UnaryOperator.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Value.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Value.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Ex1/Variable.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Variable.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Lexer.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Lexer.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Lexer.h">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Lexer.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Parser.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Parser.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Parser.h">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Parser.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Token.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Token.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/Token.h">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/Token.h">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/main.cpp">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/main.cpp">
 			<Option target="Flight-Simulator"/>
 		</Unit>
-		<Unit filename="/home/shani/CLionProjects/Flight-Simulator/CMakeLists.txt">
+		<Unit filename="/home/shani/CLionProjects/Flight-Simulator-debug/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

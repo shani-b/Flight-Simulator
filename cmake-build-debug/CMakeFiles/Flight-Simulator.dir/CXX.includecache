@@ -6,19 +6,43 @@
 
 #IncludeRegexTransform: 
 
-/home/shani/CLionProjects/Flight-Simulator/Command.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Command.cpp
+netinet/in.h
+-
+unistd.h
+-
+Command.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Command.h
+vector
+-
+algorithm
+-
+iostream
+-
+thread
+-
+Parser.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Parser.h
+sys/socket.h
+-
+arpa/inet.h
+-
+mutex
+-
+
+/home/shani/CLionProjects/Flight-Simulator-debug/Command.h
 Singelton.h
-/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Singelton.h
 vector
 -
 iostream
 -
 
-/home/shani/CLionProjects/Flight-Simulator/Ex1/Ex1.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Ex1.h
 Expression.h
-/home/shani/CLionProjects/Flight-Simulator/Ex1/Expression.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Expression.h
 ../Token.h
-/home/shani/CLionProjects/Flight-Simulator/Token.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Token.h
 map
 -
 unordered_map
@@ -30,19 +54,13 @@ string
 utility
 -
 
-/home/shani/CLionProjects/Flight-Simulator/Ex1/Expression.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Expression.h
 
-/home/shani/CLionProjects/Flight-Simulator/Lexer.h
-string
--
-vector
--
-
-/home/shani/CLionProjects/Flight-Simulator/Parser.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Parser.h
 Singelton.h
-/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Singelton.h
 Command.h
-/home/shani/CLionProjects/Flight-Simulator/Command.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Command.h
 string
 -
 unordered_map
@@ -50,29 +68,15 @@ unordered_map
 vector
 -
 
-/home/shani/CLionProjects/Flight-Simulator/Singelton.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Singelton.h
 Ex1/Ex1.h
-/home/shani/CLionProjects/Flight-Simulator/Ex1/Ex1.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Ex1/Ex1.h
 unordered_map
 -
 thread
 -
 
-/home/shani/CLionProjects/Flight-Simulator/Token.h
+/home/shani/CLionProjects/Flight-Simulator-debug/Token.h
 string
 -
-
-/home/shani/CLionProjects/Flight-Simulator/main.cpp
-string
--
-vector
--
-unistd.h
--
-Singelton.h
-/home/shani/CLionProjects/Flight-Simulator/Singelton.h
-Lexer.h
-/home/shani/CLionProjects/Flight-Simulator/Lexer.h
-Parser.h
-/home/shani/CLionProjects/Flight-Simulator/Parser.h
 
