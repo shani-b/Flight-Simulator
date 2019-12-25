@@ -14,6 +14,9 @@ Singleton *Singleton::instance = NULL;
 
 int main(int argc, char* argv[]) {
 
+
+    deque<int> ofek;
+
     Lexer lexer1;
     vector<string> tokens = lexer1.lexer("fly.txt");
     cout << "Lexing complete" <<endl;

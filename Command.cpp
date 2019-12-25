@@ -12,8 +12,10 @@
 #include "Parser.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
-#include <cstring>
+#include <mutex>
 
+
+mutex mutex_lock;
 
 using namespace std;
 
@@ -57,13 +59,13 @@ int SetVar::execute(vector<string> tokens, int index) {
     auto var = s->getProg().find(tokens[index]);
     var->second->setValue(e->calculate());
 
+    mutex_lock.lock();
     //add string to list of commands to sent to simulator
     if (var->second->isToSim()) {
         setToSim = "set " + var->second->getSim() + " " + to_string(var->second->getValue()) + "\r\n";
         s->addNewCommandToSend(setToSim);
     }
-
-    delete(inter1);
+    mutex_lock.unlock();
 
     return 2;
 }
@@ -79,7 +81,6 @@ int IfCommand::execute(vector<string> tokens, int index) {
         parserForScope.parse(m_scopeTokens);
     }
 
-    delete(m_condition);
     return m_indexToJump;
 }
 
@@ -94,7 +95,6 @@ int LoopCommand::execute(vector<string> tokens, int index) {
         parserForScope.parse(m_scopeTokens);
     }
 
-    delete(m_condition);
     return m_indexToJump;
 }
 
@@ -378,21 +378,29 @@ void ConnectControlClient::sendCommands(int client_socket) {
     const char* commandToSend;
     string message;
 
-    while (s->getServerStatus()) {   //TODO mutex
-        if (!s->getCommandsToSend().empty()) {
-            message = (s->getCommandsToSend().front());
-            commandToSend = message.c_str();
-            s->removeFrontCommand();
+    while (s->getServerStatus()) {//TODO mutex
 
-            //int is_sent = send(client_socket , commandToSend , strlen(commandToSend), 0 );
-            ssize_t is_sent = write(client_socket , commandToSend , message.length() );
-            if (is_sent == -1) {
-                std::cout<<"Error sending message"<<std::endl;
-            } else {
-               // std::cout<< commandToSend <<std::endl;
+        try {
+            mutex_lock.lock();
+            if (!s->getCommandsToSend().empty()) {
+
+                message = (s->getCommandsToSend().front());
+                commandToSend = message.c_str();
+                s->removeFrontCommand();
+
+                ssize_t is_sent = write(client_socket, commandToSend, message.length());
+                if (is_sent == -1) {
+                    std::cout << "Error sending message" << std::endl;
+                } else {
+                    // std::cout<< commandToSend <<std::endl;
+                }
+
             }
-
+            mutex_lock.unlock();
+        } catch (exception e ) {
+            cout << e.what() <<endl;
         }
+
     }
 
 }
