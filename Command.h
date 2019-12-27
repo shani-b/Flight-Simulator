@@ -35,7 +35,7 @@ public:
 };
 
 class ConnectControlClient: public Command{
-    void sendCommands(int socket);
+    static void sendCommands(int socket);
 public:
     int execute(vector<string> tokens,int index) override;
 };
@@ -53,23 +53,23 @@ public:
 
 class LoopCommand: public ConditionParser{
 public:
-    int execute(vector<string> tokens,int index);
+    int execute(vector<string> tokens,int index) override;
 
 };
 
 class IfCommand: public ConditionParser{
 public:
-    int execute(vector<string> tokens,int index);
+    int execute(vector<string> tokens,int index) override;
 };
 
 class PrintCommand: public Command{
 public:
-    int execute(vector<string> tokens,int index);
+    int execute(vector<string> tokens,int index) override;
 };
 
 class SleepCommand: public Command{
 public:
-    int execute(vector<string> tokens, int index);
+    int execute(vector<string> tokens, int index) override;
 };
 
 #endif //FLIGHT_SIMULATOR_COMMAND_H

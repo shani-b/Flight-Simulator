@@ -14,7 +14,6 @@
 #include <arpa/inet.h>
 #include <mutex>
 
-
 mutex mutex_lock;
 
 using namespace std;
@@ -330,9 +329,7 @@ void ServerCommand::updateData(vector<double> vars) {
             continue;
         } else {
             if (!iter->second->isToSim()) {
-                double temp = iter->second->getValue();
                 iter->second->setValue(vars[i]);
-
             }
         }
     }
@@ -349,9 +346,9 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
     }
 
     //We need to create a sockaddr obj to hold address of server
-    sockaddr_in address; //in means IP4
+    sockaddr_in address{}; //in means IP4
     address.sin_family = AF_INET;//IP4
-    address.sin_addr.s_addr = inet_addr("127.0.0.1");  //the localhost address
+    address.sin_addr.s_addr = inet_addr(tokens[index+1].substr(1, tokens[index+1].length()-2).c_str());  //the localhost address
     address.sin_port = htons(stoi(tokens[index +2]));
     //we need to convert our number (both port & localhost)
     // to a number that the network understands.
@@ -366,21 +363,18 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
     }
 
 
-    thread t1([this, client_socket] { this->sendCommands(client_socket); });
+    thread t1([client_socket] { ConnectControlClient::sendCommands(client_socket); });
     t1.detach();
     return 2;
 }
 
 void ConnectControlClient::sendCommands(int client_socket) {
 
-    //TODO making the sendCommand atomic
-    Singleton *s = s->getInstance();
+    Singleton *s = Singleton::getInstance();
     const char* commandToSend;
     string message;
 
-    while (s->getServerStatus()) {//TODO mutex
-
-        try {
+    while (s->getServerStatus()) {
             mutex_lock.lock();
             if (!s->getCommandsToSend().empty()) {
 
@@ -392,16 +386,10 @@ void ConnectControlClient::sendCommands(int client_socket) {
                 if (is_sent == -1) {
                     std::cout << "Error sending message" << std::endl;
                 } else {
-                    // std::cout<< commandToSend <<std::endl;
+                    //cout << "command sent!" << endl;
                 }
-
             }
             mutex_lock.unlock();
-        } catch (exception e ) {
-            cout << e.what() <<endl;
-        }
-
     }
-
 }
 

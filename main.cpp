@@ -10,10 +10,10 @@
 #include "Parser.h"
 
 using namespace std;
-Singleton *Singleton::instance = NULL;
+Singleton *Singleton::instance = nullptr;
 
 int main(int argc, char* argv[]) {
-
+    // FOR OFEK CHANGE IP IN FLY TO 10.0.2.2
 
     deque<int> ofek;
 
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 
     try {
         parser1.parse(tokens);
-    } catch (bad_alloc& e) {
+    } catch (exception &e) {
         cout << e.what() << endl;
     }
 
