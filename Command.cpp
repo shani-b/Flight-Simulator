@@ -171,7 +171,6 @@ int ServerCommand::execute(vector<string> tokens, int index) {
     }
     cout << "connection successful" << endl;
     close(socketfd); //closing the listening socket
-    //s->createServer(client_socket, this)
     thread t1([this, client_socket] { this->readData(client_socket); });
     t1.detach();
     cout <<"scope ended"<<endl;
@@ -335,6 +334,7 @@ void ServerCommand::updateData(vector<double> vars) {
 
             }
         }
+        cout<<"im out of loop1"<<endl;
     }
 }
 
@@ -366,6 +366,7 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
     }
 
 
+    //TODO close socket?
     thread t1([this, client_socket] { this->sendCommands(client_socket); });
     t1.detach();
     return 2;
@@ -373,12 +374,12 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
 
 void ConnectControlClient::sendCommands(int client_socket) {
 
-    //TODO making the sendCommand atomic
+
     Singleton *s = s->getInstance();
     const char* commandToSend;
     string message;
 
-    while (s->getServerStatus()) {//TODO mutex
+    while (s->getServerStatus()) {
 
         try {
             mutex_lock.lock();
@@ -402,6 +403,9 @@ void ConnectControlClient::sendCommands(int client_socket) {
         }
 
     }
+    cout<<"in out of loop2"<<endl;
+
+
 
 }
 

@@ -31,8 +31,8 @@ int main(int argc, char* argv[]) {
     }
 
 
-    string holder;
-    cin >> holder;// to hold the program active so it won't end
+//    string holder;
+//    cin >> holder;// to hold the program active so it won't end
 
     s->serverShutdown();//telling the server to shut down
     while (!s->getServerIsDown()) {
