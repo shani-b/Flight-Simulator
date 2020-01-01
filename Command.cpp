@@ -65,7 +65,6 @@ int SetVar::execute(vector<string> tokens, int index) {
         s->addNewCommandToSend(setToSim);
     }
     mutex_lock.unlock();
-
     return 2;
 }
 
@@ -119,7 +118,7 @@ int ConditionParser::execute(vector<string> tokens, int index) {
 
 int PrintCommand::execute(vector<string> tokens, int index) {
     if (tokens[index +1][0] == '"') {
-        cout<< tokens[index+1]<<endl;
+        cout<< tokens[index+1].substr(1, tokens[index+1].length() - 2)<<endl;
     } else  {
         cout<< (s->getProg()[tokens[index + 1]])->getValue() <<endl;
     }
@@ -185,7 +184,7 @@ void ServerCommand::readData(int socket) {
     char buffer[1] = {0};
     char curVar[100] = {0};
     vector<double> variables;
-    while (s->getServerStatus()) {
+    while (s->getCommunicationStatus()) {
         read(socket, buffer, 1);
         for (i = 0; buffer[0] != ','; i++) {
             if (buffer[0] == '\n') {
@@ -203,7 +202,7 @@ void ServerCommand::readData(int socket) {
         }
     }
     close(socket);
-    s->socketClosed(); //telling main that the server is ready to be close
+    s->serverClosed(); //telling main that the server is ready to be close
 }
 
 void ServerCommand::updateData(vector<double> vars) {
@@ -374,7 +373,7 @@ void ConnectControlClient::sendCommands(int client_socket) {
     const char* commandToSend;
     string message;
 
-    while (s->getServerStatus()) {
+    while (s->getCommunicationStatus()) {
             mutex_lock.lock();
             if (!s->getCommandsToSend().empty()) {
 
@@ -385,11 +384,10 @@ void ConnectControlClient::sendCommands(int client_socket) {
                 ssize_t is_sent = write(client_socket, commandToSend, message.length());
                 if (is_sent == -1) {
                     std::cout << "Error sending message" << std::endl;
-                } else {
-                    //cout << "command sent!" << endl;
                 }
             }
             mutex_lock.unlock();
     }
+    close(client_socket);
+    s->clientClosed();
 }
-

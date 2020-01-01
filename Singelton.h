@@ -15,8 +15,9 @@ class Singleton {
     unordered_map<string,Variable*> simVars;
     deque<string> m_commandsToSend;
 
-    bool server_flag = true;
-    bool server_socket_closed = false;
+    bool communication_flag = true;
+    bool servernIsDown = false;
+    bool clientIsDown = false;
 
     // Private constructor so that no objects can be created.
     Singleton() = default;
@@ -56,20 +57,24 @@ public:
         this -> simVars[var->getSim()] = var;
     }
 
-    bool getServerStatus() {
-        return server_flag;
+    bool getCommunicationStatus() {
+        return communication_flag;
     }
 
-    bool getServerIsDown() {
-        return this->server_socket_closed;
+    bool getCommunitactionsAreDown() {
+        return servernIsDown && clientIsDown;
     }
 
-    void socketClosed() {
-        this->server_socket_closed = true;
+    void serverClosed() {
+        this->servernIsDown = true;
     }
 
-    void serverShutdown() {
-        this -> server_flag = false;
+    void clientClosed() {
+        this->clientIsDown = true;
+    }
+
+    void programShutdown() {
+        this -> communication_flag = false;
     }
 };
 
