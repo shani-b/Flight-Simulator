@@ -6,6 +6,7 @@
 #define FLIGHT_SIMULATOR_COMMAND_H
 
 #include "Singelton.h"
+#include "Parser.h"
 #include <vector>
 #include <iostream>
 
@@ -28,7 +29,7 @@ public:
 };
 
 class ServerCommand: public Command {
-    void readData(int socket);
+    static void readData(int socket);
     static void updateData(vector<double> vars);
 public:
     int execute(vector<string> tokens,int index) override;
@@ -72,4 +73,11 @@ public:
     int execute(vector<string> tokens, int index) override;
 };
 
+class funcCommand: public Command{
+    Parser parser;
+public:
+    funcCommand(const Parser &parser);
+
+    int execute(vector<string> tokens,int index) override;
+};
 #endif //FLIGHT_SIMULATOR_COMMAND_H

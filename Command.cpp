@@ -110,8 +110,8 @@ int ConditionParser::execute(vector<string> tokens, int index) {
             break;
     }
     vector<string>::const_iterator last = tokens.begin() + i;
-    vector<string> scopeTockens(first, last);
-    m_scopeTokens = scopeTockens;
+    vector<string> scopeTokens(first, last);
+    m_scopeTokens = scopeTokens;
     m_indexToJump = i - index;
 
 }
@@ -170,7 +170,7 @@ int ServerCommand::execute(vector<string> tokens, int index) {
     cout << "connection successful" << endl;
     close(socketfd); //closing the listening socket
     //s->createServer(client_socket, this)
-    thread t1([this, client_socket] { this->readData(client_socket); });
+    thread t1([this, client_socket] { ServerCommand::readData(client_socket); });
     t1.detach();
     cout <<"scope ended"<<endl;
     return index;
@@ -391,3 +391,27 @@ void ConnectControlClient::sendCommands(int client_socket) {
     close(client_socket);
     s->clientClosed();
 }
+
+int funcCommand::execute(vector<string> tokens, int index) {
+
+    Singleton *s = Singleton::getInstance();
+
+    vector<string>::const_iterator first = tokens.begin() + index + 4;
+    int i = 0;
+    for (i = index + 4; i< tokens.size(); i++) {
+        if (tokens[i] == "}")
+            break;
+    }
+    vector<string>::const_iterator last = tokens.begin() + i;
+    vector<string> scopeTokens(first, last);
+
+    Parser parserForFunc;
+    parserForFunc.parse(scopeTokens);
+
+
+    //creating the func as a command
+    Parser::addCommand(tokens[index],/*what??*/);
+    return i - index;
+}
+
+funcCommand::funcCommand(const Parser &parser) : parser(parser) {}
