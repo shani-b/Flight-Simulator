@@ -9,6 +9,9 @@
 #include <unordered_map>
 #include <thread>
 
+/**
+ * A class with one instance.
+ */
 class Singleton {
     static Singleton *instance;
     unordered_map<string,Variable*> progVars;
@@ -23,6 +26,7 @@ class Singleton {
     Singleton() = default;
 
 public:
+    //create only one instance of class
     static Singleton *getInstance() {
         if (!instance)
             instance = new Singleton;

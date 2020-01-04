@@ -6,6 +6,30 @@
 
 #IncludeRegexTransform: 
 
+/home/shani/CLionProjects/Flight-Simulator/Command.cpp
+netinet/in.h
+-
+unistd.h
+-
+Command.h
+/home/shani/CLionProjects/Flight-Simulator/Command.h
+vector
+-
+algorithm
+-
+iostream
+-
+thread
+-
+Parser.h
+/home/shani/CLionProjects/Flight-Simulator/Parser.h
+sys/socket.h
+-
+arpa/inet.h
+-
+mutex
+-
+
 /home/shani/CLionProjects/Flight-Simulator/Command.h
 Singelton.h
 /home/shani/CLionProjects/Flight-Simulator/Singelton.h
@@ -37,6 +61,14 @@ string
 -
 vector
 -
+
+/home/shani/CLionProjects/Flight-Simulator/Parser.cpp
+Command.h
+/home/shani/CLionProjects/Flight-Simulator/Command.h
+Parser.h
+/home/shani/CLionProjects/Flight-Simulator/Parser.h
+Lexer.h
+/home/shani/CLionProjects/Flight-Simulator/Lexer.h
 
 /home/shani/CLionProjects/Flight-Simulator/Parser.h
 Singelton.h

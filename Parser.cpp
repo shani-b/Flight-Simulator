@@ -6,14 +6,13 @@
 #include "Parser.h"
 #include "Lexer.h"
 
+/**
+ * Creating and executing the commands received in the list from the Lexer.
+ * @param tokens
+ */
 void Parser::parse(vector<string> tokens){
 
     for (int i = 0; i< tokens.size(); i++) {
-
-        if (i == 25) {
-            int c = 5;
-        }
-
 
         auto token = tokens[i];
         auto it = m_commands.find(tokens[i]);
