@@ -5,7 +5,7 @@
 
 [Link to project's repository](https://github.com/ofekbr/Flight-Simulator)
 
-An Interpenter coded in C++ for FlightGear's Flight Simulator
+An Interpreter coded in C++ for FlightGear's Flight Simulator
 
 # Project description?
 In this program, we created an interpreter for running the flight gear simulator. Upon receiving a text files with commands, we will want to interpret it. We created a set of commands that are being executed by the interpreter with the given parameters. The interpreter is both client and server for the simulator - it receives data from the simulator and updates its own information, and also sends data to the simulator and updates it's state.
