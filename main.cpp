@@ -17,7 +17,6 @@ int main(int argc, char* argv[]) {
 
     Lexer lexer1;
     vector<string> tokens = lexer1.lexer("fly.txt");
-    cout << "Lexing complete" <<endl;
 
     Parser::initParser();
     try {
