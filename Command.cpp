@@ -18,6 +18,12 @@ mutex mutex_lock;
 
 using namespace std;
 
+/**
+ * Create a new variable.
+ * @param tokens
+ * @param index to jump
+ * @return
+ */
 int DefineVar::execute(vector<string> tokens, int index) {
 
     //define new var
@@ -36,14 +42,20 @@ int DefineVar::execute(vector<string> tokens, int index) {
     } else if (tokens[index+2] == "=") {
         s->addVarProg(var);
         Command *c = new SetVar();
+        //call set var to set a value to the new variable
         c->execute(tokens, index + 1);
         return 3;
     }
     return 4;
 }
 
+/**
+ * Set a value to an existing variable.
+ * @param tokens
+ * @param index to jump
+ * @return
+ */
 int SetVar::execute(vector<string> tokens, int index) {
-    //syntax: name = expression
 
     string setToSim;
 
@@ -68,6 +80,12 @@ int SetVar::execute(vector<string> tokens, int index) {
     return 2;
 }
 
+/**
+ * Execute the scope commands if the 'if' condition is true.
+ * @param tokens
+ * @param index to jump
+ * @return
+ */
 int IfCommand::execute(vector<string> tokens, int index) {
 
     //call parent execute function
@@ -80,6 +98,12 @@ int IfCommand::execute(vector<string> tokens, int index) {
     return m_indexToJump;
 }
 
+/**
+ *  Execute the scope commands while the 'while' condition is true.
+ * @param tokens
+ * @param index to jump
+ * @return
+ */
 int LoopCommand::execute(vector<string> tokens, int index) {
     //call parent execute function
     ConditionParser::execute(tokens,index);
@@ -90,6 +114,13 @@ int LoopCommand::execute(vector<string> tokens, int index) {
     return m_indexToJump;
 }
 
+/**
+ * Create a list of commands of the condition scope.
+ * Create an expresion representing the condition.
+ * @param tokens
+ * @param index to jump
+ * @return
+ */
 int ConditionParser::execute(vector<string> tokens, int index) {
     //create boolean expression from condition:
     Interpreter interpretConditionl;
@@ -110,7 +141,14 @@ int ConditionParser::execute(vector<string> tokens, int index) {
 
 }
 
+/**
+ * Print the value of the variable if exist or a string.
+ * @param tokens
+ * @param index to jump
+ * @return
+ */
 int PrintCommand::execute(vector<string> tokens, int index) {
+    //check if it is a string or a variable
     if (tokens[index +1][0] == '"') {
         cout<< tokens[index+1].substr(1, tokens[index+1].length() - 2)<<endl;
     } else  {
@@ -119,12 +157,26 @@ int PrintCommand::execute(vector<string> tokens, int index) {
     return 1;
 }
 
+/**
+ * Sleep over the given time.
+ * @param tokens
+ * @param index
+ * @return
+ */
 int SleepCommand::execute(vector<string> tokens, int index) {
+    //convert string to int
     int time = stoi(tokens[index +1]);
     this_thread::sleep_for(chrono::milliseconds(time));
     return 1;
 }
 
+/**
+ * Listen and connect the simulator.
+ * Open new thread, reads the information the simulator sends and updates in the symble table.
+ * @param tokens
+ * @param index
+ * @return
+ */
 int ServerCommand::execute(vector<string> tokens, int index) {
     index++;
     int port = stoi(tokens[index]);
@@ -170,6 +222,10 @@ int ServerCommand::execute(vector<string> tokens, int index) {
     return index;
 }
 
+/**
+ *
+ * @param socket
+ */
 void ServerCommand::readData(int socket) {
     cout <<"thread entered"<<endl;
     int i;
@@ -199,6 +255,10 @@ void ServerCommand::readData(int socket) {
     s->serverClosed(); //telling main that the server is ready to be close
 }
 
+/**
+ * 
+ * @param vars
+ */
 void ServerCommand::updateData(vector<double> vars) {
     int i;
     Singleton *s = Singleton::getInstance();
@@ -328,6 +388,13 @@ void ServerCommand::updateData(vector<double> vars) {
     }
 }
 
+/**
+ * Connect to client.
+ * Create new thread, and send set commands.
+ * @param tokens
+ * @param index
+ * @return
+ */
 int ConnectControlClient::execute(vector<string> tokens, int index) {
 
     //create socket
@@ -361,6 +428,10 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
     return 2;
 }
 
+/**
+ * Send the simulator set commands while there is in queue.
+ * @param client_socket
+ */
 void ConnectControlClient::sendCommands(int client_socket) {
 
     Singleton *s = Singleton::getInstance();
@@ -369,12 +440,14 @@ void ConnectControlClient::sendCommands(int client_socket) {
 
     while (s->getCommunicationStatus()) {
             mutex_lock.lock();
+            //Checks whether there is a command in queue to send
             if (!s->getCommandsToSend().empty()) {
 
                 message = (s->getCommandsToSend().front());
                 commandToSend = message.c_str();
                 s->removeFrontCommand();
 
+                //send the command
                 ssize_t is_sent = write(client_socket, commandToSend, message.length());
                 if (is_sent == -1) {
                     std::cout << "Error sending message" << std::endl;

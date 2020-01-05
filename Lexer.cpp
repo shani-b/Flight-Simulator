@@ -5,6 +5,12 @@
 #include "Lexer.h"
 #include <fstream>
 
+
+/**
+ * the lexer read file and create a list (vector) of tokens which represent commands for fly simulator
+ * @param fileName
+ * @return list of string
+ */
 vector <string> Lexer::lexer(const char *fileName) {
 
     fstream file{fileName, ios::in};
@@ -18,9 +24,9 @@ vector <string> Lexer::lexer(const char *fileName) {
         exit(1);
     }
 
-
+    //read lines from file
     while (getline(file, line)) {
-
+        //read chars in line
         for (int i = 0; i < line.length(); i++) {
 
             if ((str == "while") || (str == "if")) {

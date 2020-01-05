@@ -7,6 +7,10 @@
 
 unordered_map<string,Command*> Parser::m_commands;
 
+/**
+ * Creating and executing the commands received in the list from the Lexer.
+ * @param tokens
+ */
 void Parser::parse(vector<string> tokens){
 
     for (int i = 0; i< tokens.size(); i++) {

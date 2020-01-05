@@ -15,9 +15,11 @@ Singleton *Singleton::instance = nullptr;
 int main(int argc, char* argv[]) {
     // FOR OFEK CHANGE IP IN FLY TO 10.0.2.2
 
+    //create list of tokens representing command to simulator.
     Lexer lexer1;
-    vector<string> tokens = lexer1.lexer("fly.txt");
+    vector<string> tokens = lexer1.lexer(argv[1]);
 
+    //creating and execute commands
     Parser::initParser();
     try {
         Parser::parse(tokens);
