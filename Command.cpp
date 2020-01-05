@@ -73,9 +73,6 @@ int IfCommand::execute(vector<string> tokens, int index) {
     //call parent execute function
     ConditionParser::execute(tokens,index);
 
-    //Parser parserForScope;
-
-
     if (m_condition->calculate() > 0) {
         Parser::parse(m_scopeTokens);
     }
@@ -84,17 +81,12 @@ int IfCommand::execute(vector<string> tokens, int index) {
 }
 
 int LoopCommand::execute(vector<string> tokens, int index) {
-
     //call parent execute function
     ConditionParser::execute(tokens,index);
 
-    //Parser parserForScope;
-
     while (m_condition->calculate() > 0) {
         Parser::parse(m_scopeTokens);
-        //parserForScope.parse(m_scopeTokens);
     }
-
     return m_indexToJump;
 }
 
