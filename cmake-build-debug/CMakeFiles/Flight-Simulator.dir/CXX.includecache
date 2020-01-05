@@ -21,14 +21,14 @@ iostream
 -
 thread
 -
-Parser.h
-/home/ofeks/CLionProjects/Flight-Simulator/Parser.h
 sys/socket.h
 -
 arpa/inet.h
 -
 mutex
 -
+Parser.h
+/home/ofeks/CLionProjects/Flight-Simulator/Parser.h
 
 /home/ofeks/CLionProjects/Flight-Simulator/Command.h
 Singelton.h
@@ -56,9 +56,35 @@ utility
 
 /home/ofeks/CLionProjects/Flight-Simulator/Ex1/Expression.h
 
-/home/ofeks/CLionProjects/Flight-Simulator/Parser.h
-Singelton.h
+/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Interpreter.cpp
+Ex1.h
+/home/ofeks/CLionProjects/Flight-Simulator/Ex1/Ex1.h
+../Token.h
+/home/ofeks/CLionProjects/Flight-Simulator/Token.h
+../Singelton.h
 /home/ofeks/CLionProjects/Flight-Simulator/Singelton.h
+deque
+-
+stack
+-
+iostream
+-
+algorithm
+-
+
+/home/ofeks/CLionProjects/Flight-Simulator/Lexer.h
+string
+-
+vector
+-
+
+/home/ofeks/CLionProjects/Flight-Simulator/Parser.cpp
+Parser.h
+/home/ofeks/CLionProjects/Flight-Simulator/Parser.h
+Lexer.h
+/home/ofeks/CLionProjects/Flight-Simulator/Lexer.h
+
+/home/ofeks/CLionProjects/Flight-Simulator/Parser.h
 Command.h
 /home/ofeks/CLionProjects/Flight-Simulator/Command.h
 string
@@ -79,4 +105,18 @@ thread
 /home/ofeks/CLionProjects/Flight-Simulator/Token.h
 string
 -
+
+/home/ofeks/CLionProjects/Flight-Simulator/main.cpp
+string
+-
+vector
+-
+unistd.h
+-
+Singelton.h
+/home/ofeks/CLionProjects/Flight-Simulator/Singelton.h
+Lexer.h
+/home/ofeks/CLionProjects/Flight-Simulator/Lexer.h
+Parser.h
+/home/ofeks/CLionProjects/Flight-Simulator/Parser.h
 

@@ -15,30 +15,21 @@ Singleton *Singleton::instance = nullptr;
 int main(int argc, char* argv[]) {
     // FOR OFEK CHANGE IP IN FLY TO 10.0.2.2
 
-    deque<int> ofek;
-
     Lexer lexer1;
     vector<string> tokens = lexer1.lexer("fly.txt");
     cout << "Lexing complete" <<endl;
-    Parser parser1;
 
-    Singleton *s = Singleton::getInstance(); // for debug
-
+    Parser::initParser();
     try {
-        parser1.parse(tokens);
+        Parser::parse(tokens);
     } catch (exception &e) {
         cout << e.what() << endl;
     }
 
-
-    string holder;
-    cin >> holder;// to hold the program active so it won't end
-
-    s->serverShutdown();//telling the server to shut down
-    while (!s->getServerIsDown()) {
-        sleep(1);// wait until the server has closed the socket.
+    Singleton *s = Singleton::getInstance();
+    s->programShutdown();//telling the server\client to shutdown
+    while (!s->getCommunitactionsAreDown()) {
+        sleep(1);// wait until the server and client has closed the socket.
     }
-    //TODO close all sockets via two-way flags in singelon
-    // (one flag turn off here to signal the loop on each thread to stop iterating, one from the thread to signal that the socket closed.
     return 0;
 }
