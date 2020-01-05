@@ -5,7 +5,7 @@
 #ifndef FLIGHT_SIMULATOR_SINGELTON_H
 #define FLIGHT_SIMULATOR_SINGELTON_H
 
-#include "Ex1/Ex1.h"
+#include "Ex1.h"
 #include <unordered_map>
 #include <thread>
 

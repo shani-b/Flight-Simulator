@@ -5,11 +5,12 @@
 #include "Ex1.h"
 #include <string>
 #include <regex>
+#include <utility>
 
 using namespace std;
 
 
-Variable::Variable(string name, double value, string sim) {
+Variable::Variable(const string& name, double value, string sim) {
     regex regex1("[a-zA-Z]+");
     regex regex2("[a-zA-Z]*_[0-9]*");
     regex regex3("[a-zA-Z]+[0-9]*");
@@ -18,7 +19,7 @@ Variable::Variable(string name, double value, string sim) {
     if (regex_match(name,regex1) || regex_match(name,regex2) || regex_match(name,regex3) || regex_match(name,regex4)) {
         m_name = name;
         m_value = value;
-        m_sim = sim;
+        m_sim = std::move(sim);
         toSim = false;
     }
     else {
@@ -26,7 +27,7 @@ Variable::Variable(string name, double value, string sim) {
     }
 }
 
-Variable::Variable(string name, double value) {
+Variable::Variable(const string& name, double value) {
     regex regex1("[a-zA-Z]+");
     regex regex2("[a-zA-Z]*_[0-9]*");
     regex regex3("[a-zA-Z]+[0-9]*");
@@ -43,12 +44,12 @@ Variable::Variable(string name, double value) {
 }
 
 void Variable::setName(string name) {
-    m_name = name;
+    m_name = std::move(name);
 }
 void Variable::setValue(double value) {
     m_value = value;
 }
-void Variable::setSim(string sim) {
+void Variable::setSim(const string& sim) {
     m_sim = sim.substr(1, sim.size() - 2); // to delete the '/' in the beginning
 }
 
@@ -75,13 +76,13 @@ Variable& Variable::operator -=(double const &num) {
     return *this;
 }
 
-Variable& Variable::operator ++(int) {
+Variable  Variable::operator ++(int) {
     Variable* tmp(this); // copy
     ++(*this);
     return *tmp;
 }
 
-Variable& Variable::operator --(int) {
+Variable  Variable::operator --(int) {
     Variable* tmp(this); // copy
     --(*this);
     return *tmp;

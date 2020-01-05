@@ -6,7 +6,7 @@
 #define UNTITLED_EX1_H
 
 #include "Expression.h"
-#include "../Token.h"
+#include "Token.h"
 #include <map>
 #include <unordered_map>
 #include <deque>
@@ -18,21 +18,21 @@ class UnaryOperator :public Expression{
 protected:
     Expression* m_exp;
 public:
-    UnaryOperator(Expression* exp);
-    virtual ~UnaryOperator();
-    virtual double calculate()= 0;
+    explicit UnaryOperator(Expression* exp);
+    ~UnaryOperator() override;
+    double calculate() override = 0;
 };
 
 class UPlus:public UnaryOperator{
 public:
-    UPlus(Expression* exp):UnaryOperator(exp){}
-    double calculate();
+    explicit UPlus(Expression* exp):UnaryOperator(exp){}
+    double calculate() override;
 };
 
 class UMinus:public UnaryOperator{
 public:
-    UMinus(Expression* exp):UnaryOperator(exp){}
-    double calculate();
+    explicit UMinus(Expression* exp):UnaryOperator(exp){}
+    double calculate() override;
 };
 
 class BinaryOperator :public Expression{
@@ -41,8 +41,8 @@ protected:
     Expression* m_left;
 public:
     BinaryOperator(Expression* left, Expression* right);
-    virtual ~BinaryOperator();
-    virtual double calculate() = 0;
+    ~BinaryOperator() override;
+    double calculate() override = 0;
 
 
 };
@@ -50,49 +50,49 @@ public:
 class Plus :public BinaryOperator{
 public:
     Plus(Expression* left, Expression* right):BinaryOperator(left, right){}
-    double calculate();
+    double calculate() override;
 };
 
 class Minus :public BinaryOperator{
 public:
     Minus(Expression* left, Expression* right):BinaryOperator(left, right){}
-    double calculate();
+    double calculate() override;
 };
 
 class Mul :public BinaryOperator{
 public:
     Mul(Expression* left, Expression* right):BinaryOperator(left, right){}
-    double calculate();
+    double calculate() override;
 };
 
 class Div :public BinaryOperator{
 public:
     Div(Expression* left, Expression* right):BinaryOperator(left, right){}
-    double calculate();
+    double calculate() override;
 };
 
 class Variable : public Expression{
     //members
-    bool toSim;
+    bool toSim{};
     string m_name;
-    double m_value;
+    double m_value{};
     string m_sim;
 public:
-    Variable(){}
-    Variable(string name, double value, string sim);
-    Variable(string name, double value);
-    ~Variable(){};
+    Variable()= default;
+    Variable(const string& name, double value, string sim);
+    Variable(const string& name, double value);
+    ~Variable() override = default;
     void setValue(double value);
     void setName(string name);
-    void setSim(string sim);
+    void setSim(const string& sim);
     void setToSim();
     Variable& operator ++();
     Variable& operator --();
     Variable& operator +=(const double &num);
     Variable& operator -=(const double &num);
-    Variable& operator++(int);
-    Variable& operator--(int);
-    double calculate();
+    Variable  operator++(int);
+    Variable  operator--(int);
+    double calculate() override;
     double getValue();
     string getName();
     string getSim();
@@ -121,10 +121,10 @@ class Interpreter {
 public:
     Interpreter();
     virtual ~Interpreter();
-    Expression* interpret(string str);
-    bool isVarInList(string symbol);
+    static Expression* interpret(string str);
+    static bool isVarInList(const string& symbol);
 
-    Expression* arrayToExpression(deque<Token> *tokens);
+    static Expression* arrayToExpression(deque<Token> *tokens);
 };
 
 

@@ -56,9 +56,7 @@ int DefineVar::execute(vector<string> tokens, int index) {
  * @return
  */
 int SetVar::execute(vector<string> tokens, int index) {
-
     string setToSim;
-
     //making an expression from the expression
     auto *inter1 = new Interpreter();
     Expression *e = inter1->interpret(tokens[index + 2]);
@@ -137,7 +135,7 @@ int ConditionParser::execute(vector<string> tokens, int index) {
     vector<string>::const_iterator last = tokens.begin() + i;
     vector<string> scopeTokens(first, last);
     m_scopeTokens = scopeTokens;
-    m_indexToJump = i - index;
+    m_indexToJump = (int) i - index;
 
     return 0;
 }
@@ -253,7 +251,7 @@ void ServerCommand::readData(int socket) {
         }
     }
     close(socket);
-    s->serverClosed(); //telling main that the server is ready to be close
+    single->serverClosed(); //telling main that the server is ready to be close
 }
 
 /**
@@ -434,7 +432,6 @@ int ConnectControlClient::execute(vector<string> tokens, int index) {
  * @param client_socket
  */
 void ConnectControlClient::sendCommands(int client_socket) {
-
     Singleton *s = Singleton::getInstance();
     const char* commandToSend;
     string message;
@@ -462,35 +459,33 @@ void ConnectControlClient::sendCommands(int client_socket) {
 
 int createFuncCommand::execute(vector<string> tokens, int index) {
     int bracketsCounter = 0;
-    Singleton *s = Singleton::getInstance();
 
     vector<string>::const_iterator first = tokens.begin() + index + 4;
     int i = 0;
-    for (i = index + 4; i< tokens.size(); i++) {
+    for (i = index + 4; (unsigned) i < tokens.size(); i++) {
         if (tokens[i] == "{") {
             bracketsCounter++;
         }
-        if (tokens[i] == "}")
+        if (tokens[i] == "}") {
             if (bracketsCounter != 0) {
                 bracketsCounter--;
                 continue;
             } else {
                 break;
             }
+        }
     }
     auto *var = new Variable();
     var->setName(tokens[index+2]);
-    s->addVarProg(var);
+    Command::s->addVarProg(var);
 
     auto *var2 = new Variable();
     var2->setName(tokens[index]);
-    s->addVarProg(var2);
+    Command::s->addVarProg(var2);
     var2->setName(tokens[index+2]);
-
 
     vector<string>::const_iterator last = tokens.begin() + i;
     vector<string> scopeTokens(first, last);
-
 
     //creating the func as a command
     Parser::addCommand(tokens[index],new funcCommand(scopeTokens));
@@ -502,9 +497,8 @@ funcCommand::funcCommand(const vector<string>& scope) {
 }
 
 int funcCommand::execute(vector<string> tokens, int index) {
-    Singleton *s = Singleton::getInstance();
-    auto funcVar = s->getProg().find(tokens[index])->second; //takeoff
-    auto argument = s->getProg().find(funcVar->getName())->second; // X
+    auto funcVar = Command::s->getProg().find(tokens[index])->second; //takeoff
+    auto argument = Command::s->getProg().find(funcVar->getName())->second; // X
     double value = stod(tokens[index+1]);
     argument->setValue(value);
     Parser::parse(this->m_scope);

@@ -12,7 +12,7 @@ class Expression {
 
 public:
     virtual double calculate() = 0;
-    virtual ~Expression() {}
+    virtual ~Expression() = default;
 };
 
 #endif //PROJECT_EXPRESSION_H

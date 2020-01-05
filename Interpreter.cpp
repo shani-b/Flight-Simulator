@@ -3,12 +3,13 @@
 //
 
 #include "Ex1.h"
-#include "../Token.h"
-#include "../Singelton.h"
+#include "Token.h"
+#include "Singelton.h"
 #include <deque>
 #include <stack>
 #include <iostream>
 #include <algorithm>
+#include <utility>
 
 using namespace std;
 
@@ -18,35 +19,31 @@ bool isStrNum(string str);
 deque<Token> strToArray(string str);
 Expression* arrayToExpression(deque<Token> *tokens);
 
-Interpreter::Interpreter() {
-}
+Interpreter::Interpreter() = default;
 
 Interpreter::~Interpreter() {
     m_listOfVar.clear();
 }
 
-bool Interpreter::isVarInList(string symbol) {
-    Singleton *s = s->getInstance();
+bool Interpreter::isVarInList(const string& symbol) {
+    Singleton *s = Singleton::getInstance();
 
-    if (s->getProg().count(symbol)){
-        return true;
-    }
-    return false;
+    return s->getProg().count(symbol) != 0;
 }
 
 Expression* Interpreter::interpret(string str) {
-    deque<Token> arrayOfTokens = strToArray(str);
+    deque<Token> arrayOfTokens = strToArray(std::move(str));
     try {
         Expression* e =  arrayToExpression(&arrayOfTokens);
         return e;
-    } catch (exception e) {
+    } catch (exception &e) {
         throw "bad input";
     }
 }
 
 Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
 
-    Singleton *s = s->getInstance();
+    Singleton *s = Singleton::getInstance();
     deque<Token> output;
     stack<Token> myStack;
 
@@ -57,7 +54,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
         if((*iter).getType() == Number) {
             output.push_back(*iter);
         } else if (((*iter).getType() == Operator ) || ((*iter).getType() == ConditionOperator)) {
-            while (myStack.size() != 0 && myStack.top().getType() == Operator
+            while (!myStack.empty() && myStack.top().getType() == Operator
                    && myStack.top().getType() != LeftBrace
                    &&((myStack.top().getPriority() > (*iter).getPriority())
                       || (myStack.top().getPriority() == (*iter).getPriority()))) {
@@ -68,18 +65,18 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
         } else if ((*iter).getType() == LeftBrace) {
             myStack.push(*iter);
         } else if ((*iter).getType() == RightBrace) {
-            while (myStack.size() != 0 && myStack.top().getType() != LeftBrace) {
+            while (!myStack.empty() && myStack.top().getType() != LeftBrace) {
                 output.push_back(myStack.top());
                 myStack.pop();
             }
-            if (myStack.size() != 0 && myStack.top().getType() == LeftBrace) {
+            if (!myStack.empty() && myStack.top().getType() == LeftBrace) {
                 myStack.pop();
             }
         }
     }
 
 
-    while (myStack.size() != 0) {
+    while (!myStack.empty()) {
         if ((myStack.top().getType() == Operator) || (myStack.top().getType() == ConditionOperator)) {
             output.push_back(myStack.top());
             myStack.pop();
@@ -99,7 +96,7 @@ Expression* Interpreter::arrayToExpression(deque<Token> *tokens) {
         flag = true;
     }
 
-    while (output.size() != 0) {
+    while (!output.empty()) {
         if (output.front().getType() == Number) {
             //check if its a variable in our list
             if (isVarInList(output.front().getSymbol())) {
@@ -177,10 +174,7 @@ bool isStrNum(string str) {
     if (numOfP > 1) {
         return false;
     }
-    if (numOfM >1) {
-        return false;
-    }
-    return true;
+    return numOfM <= 1;
 }
 
 deque<Token> strToArray(string s) {
@@ -208,7 +202,7 @@ deque<Token> strToArray(string s) {
     //divide the string to an array of tokens
     bool prevNum = false;
     deque<Token> arrayOfTokens;
-    string mergeChar = "";
+    string mergeChar;
 
     for (unsigned int i = 0; i < s.size();i++){
         if (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/' || s[i] == '%' || s[i] == '$') {
