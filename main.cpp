@@ -17,12 +17,12 @@ int main(int argc, char* argv[]) {
 
     //create list of tokens representing command to simulator.
     Lexer lexer1;
-    vector<string> tokens = lexer1.lexer("fly.txt");
-    cout << "Lexing complete" <<endl;
+    vector<string> tokens = lexer1.lexer(argv[1]);
+
     //creating and execute commands
-    Parser parser1;
+    Parser::initParser();
     try {
-        parser1.parse(tokens);
+        Parser::parse(tokens);
     } catch (exception &e) {
         cout << e.what() << endl;
     }
