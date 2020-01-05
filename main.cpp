@@ -25,9 +25,9 @@ int main(int argc, char* argv[]) {
     vector<string> tokens = lexer1.lexer(argv[1]);
     cout << "Lexing complete" <<endl;
     //creating and execute commands
-    Parser parser1;
+    Parser::initParser();
     try {
-        parser1.parse(tokens);
+        Parser::parse(tokens);
     } catch (exception &e) {
         cout << e.what() << endl;
     }

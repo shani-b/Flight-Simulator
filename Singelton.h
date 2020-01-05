@@ -17,7 +17,6 @@ class Singleton {
     unordered_map<string,Variable*> progVars;
     unordered_map<string,Variable*> simVars;
     deque<string> m_commandsToSend;
-
     bool communication_flag = true;
     bool servernIsDown = false;
     bool clientIsDown = false;
@@ -49,7 +48,7 @@ public:
         m_commandsToSend.pop_front();
     }
 
-    void addNewCommandToSend(string str) {
+    void addNewCommandToSend(const string& str) {
         m_commandsToSend.push_back(str);
     }
 

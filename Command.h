@@ -28,7 +28,7 @@ public:
 };
 
 class ServerCommand: public Command {
-    void readData(int socket);
+    static void readData(int socket);
     static void updateData(vector<double> vars);
 public:
     int execute(vector<string> tokens,int index) override;
@@ -43,12 +43,11 @@ public:
 
 class ConditionParser: public Command{
 protected:
-    //boolean Expression
     Expression *m_condition;
     vector<string> m_scopeTokens;
     int m_indexToJump;
 public:
-    virtual int execute(vector<string> tokens,int index);
+    int execute(vector<string> tokens,int index) override;
 };
 
 class LoopCommand: public ConditionParser{
@@ -72,4 +71,16 @@ public:
     int execute(vector<string> tokens, int index) override;
 };
 
+class createFuncCommand: public Command{
+public:
+    int execute(vector<string> tokens,int index) override;
+};
+
+class funcCommand: public Command {
+    vector<string> m_scope;
+public:
+    explicit funcCommand(const vector<string>& scope);
+
+    int execute(vector<string> tokens,int index) override;
+};
 #endif //FLIGHT_SIMULATOR_COMMAND_H

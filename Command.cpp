@@ -9,10 +9,10 @@
 #include <algorithm>
 #include <iostream>
 #include <thread>
-#include "Parser.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <mutex>
+#include "Parser.h"
 
 mutex mutex_lock;
 
@@ -91,10 +91,8 @@ int IfCommand::execute(vector<string> tokens, int index) {
     //call parent execute function
     ConditionParser::execute(tokens,index);
 
-    Parser parserForScope;
-
-    if (m_condition->calculate()) {
-        parserForScope.parse(m_scopeTokens);
+    if (m_condition->calculate() > 0) {
+        Parser::parse(m_scopeTokens);
     }
 
     return m_indexToJump;
@@ -107,16 +105,12 @@ int IfCommand::execute(vector<string> tokens, int index) {
  * @return
  */
 int LoopCommand::execute(vector<string> tokens, int index) {
-
     //call parent execute function
     ConditionParser::execute(tokens,index);
 
-    Parser parserForScope;
-
-    while (m_condition->calculate()) {
-        parserForScope.parse(m_scopeTokens);
+    while (m_condition->calculate() > 0) {
+        Parser::parse(m_scopeTokens);
     }
-
     return m_indexToJump;
 }
 
@@ -141,8 +135,8 @@ int ConditionParser::execute(vector<string> tokens, int index) {
             break;
     }
     vector<string>::const_iterator last = tokens.begin() + i;
-    vector<string> scopeTockens(first, last);
-    m_scopeTokens = scopeTockens;
+    vector<string> scopeTokens(first, last);
+    m_scopeTokens = scopeTokens;
     m_indexToJump = i - index;
 
     return 0;
@@ -223,7 +217,7 @@ int ServerCommand::execute(vector<string> tokens, int index) {
     cout << "connection successful" << endl;
     close(socketfd); //closing the listening socket
     //s->createServer(client_socket, this)
-    thread t1([this, client_socket] { this->readData(client_socket); });
+    thread t1([this, client_socket] { ServerCommand::readData(client_socket); });
     t1.detach();
     cout <<"scope ended"<<endl;
     return index;
@@ -464,4 +458,56 @@ void ConnectControlClient::sendCommands(int client_socket) {
     }
     close(client_socket);
     s->clientClosed();
+}
+
+int createFuncCommand::execute(vector<string> tokens, int index) {
+    int bracketsCounter = 0;
+    Singleton *s = Singleton::getInstance();
+
+    vector<string>::const_iterator first = tokens.begin() + index + 4;
+    int i = 0;
+    for (i = index + 4; i< tokens.size(); i++) {
+        if (tokens[i] == "{") {
+            bracketsCounter++;
+        }
+        if (tokens[i] == "}")
+            if (bracketsCounter != 0) {
+                bracketsCounter--;
+                continue;
+            } else {
+                break;
+            }
+    }
+    auto *var = new Variable();
+    var->setName(tokens[index+2]);
+    s->addVarProg(var);
+
+    auto *var2 = new Variable();
+    var2->setName(tokens[index]);
+    s->addVarProg(var2);
+    var2->setName(tokens[index+2]);
+
+
+    vector<string>::const_iterator last = tokens.begin() + i;
+    vector<string> scopeTokens(first, last);
+
+
+    //creating the func as a command
+    Parser::addCommand(tokens[index],new funcCommand(scopeTokens));
+    return i - index;
+}
+
+funcCommand::funcCommand(const vector<string>& scope) {
+    m_scope = scope;
+}
+
+int funcCommand::execute(vector<string> tokens, int index) {
+    Singleton *s = Singleton::getInstance();
+    auto funcVar = s->getProg().find(tokens[index])->second; //takeoff
+    auto argument = s->getProg().find(funcVar->getName())->second; // X
+    double value = stod(tokens[index+1]);
+    argument->setValue(value);
+    Parser::parse(this->m_scope);
+
+    return 1;
 }
