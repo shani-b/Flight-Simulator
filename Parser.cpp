@@ -12,7 +12,7 @@
  */
 void Parser::parse(vector<string> tokens){
 
-    for (int i = 0; i< tokens.size(); i++) {
+    for (unsigned i = 0; i< tokens.size(); i++) {
 
         auto token = tokens[i];
         auto it = m_commands.find(tokens[i]);
@@ -24,13 +24,11 @@ void Parser::parse(vector<string> tokens){
         if (c != nullptr) {
             i += (c->execute(tokens, i));
         }
-
     }
 
 }
 
 Parser::~Parser() {
-
     delete(m_commands["var"]);
     delete(m_commands["default"]);
     delete(m_commands["while"]);

@@ -135,7 +135,7 @@ int ConditionParser::execute(vector<string> tokens, int index) {
 
     //crate new array of tokens to the scope
     vector<string>::const_iterator first = tokens.begin() + index + 3;
-    int i = 0;
+    unsigned i = 0;
     for (i = index + 3; i< tokens.size(); i++) {
         if (tokens[i] == "}")
             break;
@@ -145,6 +145,7 @@ int ConditionParser::execute(vector<string> tokens, int index) {
     m_scopeTokens = scopeTockens;
     m_indexToJump = i - index;
 
+    return 0;
 }
 
 /**
@@ -236,11 +237,11 @@ void ServerCommand::readData(int socket) {
     cout <<"thread entered"<<endl;
     int i;
     double value;
-    Singleton *s = Singleton::getInstance();
+    Singleton *single = Singleton::getInstance();
     char buffer[1] = {0};
     char curVar[100] = {0};
     vector<double> variables;
-    while (s->getCommunicationStatus()) {
+    while (single->getCommunicationStatus()) {
         read(socket, buffer, 1);
         for (i = 0; buffer[0] != ','; i++) {
             if (buffer[0] == '\n') {
@@ -262,11 +263,11 @@ void ServerCommand::readData(int socket) {
 }
 
 /**
- * 
+ *
  * @param vars
  */
 void ServerCommand::updateData(vector<double> vars) {
-    int i;
+    unsigned i;
     Singleton *s = Singleton::getInstance();
     unordered_map<string, Variable*> map = s->getSim();
     auto iter = map.end();
