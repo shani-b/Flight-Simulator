@@ -27,7 +27,7 @@ vector <string> Lexer::lexer(const char *fileName) {
     //read lines from file
     while (getline(file, line)) {
         //read chars in line
-        for (int i = 0; i < line.length(); i++) {
+        for (unsigned i = 0; i < line.length(); i++) {
 
             if ((str == "while") || (str == "if")) {
                 tokens.push_back(str);
@@ -62,7 +62,7 @@ vector <string> Lexer::lexer(const char *fileName) {
                     }
                     str = "";
                 }
-            } else if (line[i] == '{' | line[i] == '}') {
+            } else if ((line[i] == '{') || (line[i] == '}')) {
                 if (!str.empty()){
                     tokens.push_back(str);
                 }

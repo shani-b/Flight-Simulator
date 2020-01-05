@@ -104,7 +104,7 @@ class Value: public Expression {
     double m_value;
 public:
     explicit Value(double value);
-    ~Value() override = default;;
+    ~Value() override = default;
     double calculate() override;
 };
 

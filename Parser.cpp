@@ -13,7 +13,7 @@ unordered_map<string,Command*> Parser::m_commands;
  */
 void Parser::parse(vector<string> tokens){
 
-    for (int i = 0; i< tokens.size(); i++) {
+    for (unsigned i = 0; i< tokens.size(); i++) {
         auto token = tokens[i];
         auto it = m_commands.find(tokens[i]);
         if (it == m_commands.end()){
@@ -40,7 +40,6 @@ Parser::~Parser() {
     delete(m_commands["Sleep"]);
     delete(m_commands["openDataServer"]);
     delete(m_commands["connectControlClient"]);
-    //TODO fix destructor
 }
 
 void Parser::addCommand(const string& commandName, Command *command) {
