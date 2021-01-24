@@ -35,7 +35,5 @@ the client and server.
 
 # TEAM
 NAME: Shani Berdah
-ID: 20569426
 
 NAME: Ofek Barkai
-ID:316079532
